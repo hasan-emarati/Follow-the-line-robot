@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.1.30  G:\meriikh\masiryab\Mycode\Debug\List\code.asm Fri Jan 13 19:24:57 2023
+AVRASM ver. 2.1.30  G:\meriikh\Follow the line\Follow-the-line-robot\My-code\Debug\List\s1.asm Mon Jan 16 23:29:27 2023
 
                  
                  
@@ -8,7 +8,7 @@ AVRASM ver. 2.1.30  G:\meriikh\masiryab\Mycode\Debug\List\code.asm Fri Jan 13 19
                  ;http://www.hpinfotech.com
                  
                  ;Build configuration    : Debug
-                 ;Chip type              : ATmega16
+                 ;Chip type              : ATmega16A
                  ;Program type           : Application
                  ;Clock frequency        : 8.000000 MHz
                  ;Memory model           : Small
@@ -29,7 +29,7 @@ AVRASM ver. 2.1.30  G:\meriikh\masiryab\Mycode\Debug\List\code.asm Fri Jan 13 19
                  
                  	#define _MODEL_SMALL_
                  
-                 	#pragma AVRPART ADMIN PART_NAME ATmega16
+                 	#pragma AVRPART ADMIN PART_NAME ATmega16A
                  	#pragma AVRPART MEMORY PROG_FLASH 16384
                  	#pragma AVRPART MEMORY EEPROM 512
                  	#pragma AVRPART MEMORY INT_SRAM SIZE 1024
@@ -1167,21 +1167,15 @@ AVRASM ver. 2.1.30  G:\meriikh\masiryab\Mycode\Debug\List\code.asm Fri Jan 13 19
                  
                  	.CSEG
                  ;/*******************************************************
-                 ;This program was created by the
-                 ;CodeWizardAVR V3.12 Advanced
-                 ;Automatic Program Generator
-                 ;? Copyright 1998-2014 Pavel Haiduc, HP InfoTech s.r.l.
-                 ;http://www.hpinfotech.com
-                 ;
                  ;Project :
-                 ;Version :
-                 ;Date    : 13/01/2023
+                 ;Version :  1.8.0
+                 ;Date    : 16/01/2023
                  ;Author  :
                  ;Company :
                  ;Comments:
                  ;
                  ;
-                 ;Chip type               : ATmega16
+                 ;Chip type               : ATmega16A
                  ;Program type            : Application
                  ;AVR Core Clock frequency: 8.000000 MHz
                  ;Memory model            : Small
@@ -1189,7 +1183,7 @@ AVRASM ver. 2.1.30  G:\meriikh\masiryab\Mycode\Debug\List\code.asm Fri Jan 13 19
                  ;Data Stack size         : 256
                  ;*******************************************************/
                  ;
-                 ;#include <mega16.h>
+                 ;#include <mega16a.h>
                  	#ifndef __SLEEP_DEFINED__
                  	#define __SLEEP_DEFINED__
                  	.EQU __se_bit=0x40
@@ -1201,174 +1195,162 @@ AVRASM ver. 2.1.30  G:\meriikh\masiryab\Mycode\Debug\List\code.asm Fri Jan 13 19
                  	.EQU __sm_adc_noise_red=0x10
                  	.SET power_ctrl_reg=mcucr
                  	#endif
-                 ;#include <delay.h>
-                 ;
-                 ;// Declare your global variables here
                  ;
                  ;void main(void)
-                 ; 0000 001E {
+                 ; 0000 0015 {
                  
                  	.CSEG
                  _main:
                  ; .FSTART _main
-                 ; 0000 001F     // Declare your local variables here
-                 ; 0000 0020 
-                 ; 0000 0021     // Input/Output Ports initialization
-                 ; 0000 0022     // Port A initialization
-                 ; 0000 0023     // Function: Bit7=In Bit6=In Bit5=In Bit4=In Bit3=In Bit2=In Bit1=In Bit0=In
-                 ; 0000 0024     DDRA=(0<<DDA7) | (0<<DDA6) | (0<<DDA5) | (0<<DDA4) | (0<<DDA3) | (0<<DDA2) | (0<<DDA1) | (0<<DDA0);
+                 ; 0000 0016     // Input/Output Ports initialization
+                 ; 0000 0017     // Port A initialization
+                 ; 0000 0018     // Function: Bit7=In Bit6=In Bit5=In Bit4=In Bit3=In Bit2=In Bit1=In Bit0=In
+                 ; 0000 0019     DDRA=(0<<DDA7) | (0<<DDA6) | (0<<DDA5) | (0<<DDA4) | (0<<DDA3) | (0<<DDA2) | (0<<DDA1) | (0<<DDA0);
 000045 e0e0      	LDI  R30,LOW(0)
 000046 bbea      	OUT  0x1A,R30
-                 ; 0000 0025     // State: Bit7=T Bit6=T Bit5=T Bit4=T Bit3=T Bit2=T Bit1=T Bit0=T
-                 ; 0000 0026     PORTA=(0<<PORTA7) | (0<<PORTA6) | (0<<PORTA5) | (0<<PORTA4) | (0<<PORTA3) | (0<<PORTA2) | (0<<PORTA1) | (0<<PORTA0);
-000047 bbeb      	OUT  0x1B,R30
-                 ; 0000 0027 
-                 ; 0000 0028     // Port B initialization
-                 ; 0000 0029     // Function: Bit7=In Bit6=In Bit5=In Bit4=In Bit3=Out Bit2=In Bit1=In Bit0=In
-                 ; 0000 002A     DDRB=(0<<DDB7) | (0<<DDB6) | (0<<DDB5) | (0<<DDB4) | (1<<DDB3) | (0<<DDB2) | (0<<DDB1) | (0<<DDB0);
+                 ; 0000 001A     // Port B initialization
+                 ; 0000 001B     // Function: Bit7=In Bit6=In Bit5=In Bit4=In Bit3=In Bit2=In Bit1=In Bit0=In
+                 ; 0000 001C     DDRB=(0<<DDB7) | (0<<DDB6) | (0<<DDB5) | (0<<DDB4) | (0<<DDB3) | (0<<DDB2) | (0<<DDB1) | (0<<DDB0);
+000047 bbe7      	OUT  0x17,R30
+                 ; 0000 001D     // State: Bit7=T Bit6=T Bit5=T Bit4=T Bit3=T Bit2=T Bit1=T Bit0=T
+                 ; 0000 001E     PORTB=(0<<PORTB7) | (0<<PORTB6) | (0<<PORTB5) | (0<<PORTB4) | (1<<PORTB3) | (0<<PORTB2) | (0<<PORTB1) | (0<<PORTB0);
 000048 e0e8      	LDI  R30,LOW(8)
-000049 bbe7      	OUT  0x17,R30
-                 ; 0000 002B     // State: Bit7=T Bit6=T Bit5=T Bit4=T Bit3=0 Bit2=T Bit1=T Bit0=T
-                 ; 0000 002C     PORTB=(0<<PORTB7) | (0<<PORTB6) | (0<<PORTB5) | (0<<PORTB4) | (0<<PORTB3) | (0<<PORTB2) | (0<<PORTB1) | (0<<PORTB0);
-00004a e0e0      	LDI  R30,LOW(0)
-00004b bbe8      	OUT  0x18,R30
-                 ; 0000 002D 
-                 ; 0000 002E     // Port C initialization
-                 ; 0000 002F     // Function: Bit7=In Bit6=In Bit5=In Bit4=In Bit3=Out Bit2=Out Bit1=Out Bit0=Out
-                 ; 0000 0030     DDRC=(1<<DDC7) | (1<<DDC6) | (1<<DDC5) | (1<<DDC4) | (1<<DDC3) | (1<<DDC2) | (1<<DDC1) | (1<<DDC0);
-00004c efef      	LDI  R30,LOW(255)
-00004d bbe4      	OUT  0x14,R30
-                 ; 0000 0031     // State: Bit7=T Bit6=T Bit5=T Bit4=T Bit3=0 Bit2=0 Bit1=0 Bit0=0
-                 ; 0000 0032     PORTC=(0<<PORTC7) | (0<<PORTC6) | (0<<PORTC5) | (0<<PORTC4) | (0<<PORTC3) | (0<<PORTC2) | (0<<PORTC1) | (0<<PORTC0);
-00004e e0e0      	LDI  R30,LOW(0)
-00004f bbe5      	OUT  0x15,R30
-                 ; 0000 0033 
-                 ; 0000 0034     // Port D initialization
-                 ; 0000 0035     // Function: Bit7=Out Bit6=In Bit5=In Bit4=In Bit3=In Bit2=In Bit1=In Bit0=In
-                 ; 0000 0036     DDRD=(1<<DDD7) | (0<<DDD6) | (0<<DDD5) | (0<<DDD4) | (0<<DDD3) | (0<<DDD2) | (0<<DDD1) | (0<<DDD0);
-000050 e8e0      	LDI  R30,LOW(128)
-000051 bbe1      	OUT  0x11,R30
-                 ; 0000 0037     // State: Bit7=0 Bit6=T Bit5=T Bit4=T Bit3=T Bit2=T Bit1=T Bit0=T
-                 ; 0000 0038     PORTD=(0<<PORTD7) | (0<<PORTD6) | (0<<PORTD5) | (0<<PORTD4) | (0<<PORTD3) | (0<<PORTD2) | (0<<PORTD1) | (0<<PORTD0);
-000052 e0e0      	LDI  R30,LOW(0)
-000053 bbe2      	OUT  0x12,R30
-                 ; 0000 0039 
-                 ; 0000 003A     // Timer/Counter 0 initialization
-                 ; 0000 003B     // Clock source: System Clock
-                 ; 0000 003C     // Clock value: 8000.000 kHz
-                 ; 0000 003D     // Mode: Fast PWM top=0xFF
-                 ; 0000 003E     // OC0 output: Non-Inverted PWM
-                 ; 0000 003F     // Timer Period: 0.032 ms
-                 ; 0000 0040     // Output Pulse(s):
-                 ; 0000 0041     // OC0 Period: 0.032 ms Width: 0 us
-                 ; 0000 0042     TCCR0=(1<<WGM00) | (1<<COM01) | (0<<COM00) | (1<<WGM01) | (0<<CS02) | (0<<CS01) | (1<<CS00);
-000054 e6e9      	LDI  R30,LOW(105)
-000055 bfe3      	OUT  0x33,R30
-                 ; 0000 0043     TCNT0=0x00;
-000056 e0e0      	LDI  R30,LOW(0)
-000057 bfe2      	OUT  0x32,R30
-                 ; 0000 0044     OCR0=0x00;
-000058 bfec      	OUT  0x3C,R30
-                 ; 0000 0045 
-                 ; 0000 0046 
-                 ; 0000 0047     // Timer/Counter 2 initialization
-                 ; 0000 0048     // Clock source: System Clock
-                 ; 0000 0049     // Clock value: 8000.000 kHz
-                 ; 0000 004A     // Mode: Fast PWM top=0xFF
-                 ; 0000 004B     // OC2 output: Non-Inverted PWM
-                 ; 0000 004C     // Timer Period: 0.032 ms
-                 ; 0000 004D     // Output Pulse(s):
-                 ; 0000 004E     // OC2 Period: 0.032 ms Width: 0 us
-                 ; 0000 004F     ASSR=0<<AS2;
-000059 bde2      	OUT  0x22,R30
-                 ; 0000 0050     TCCR2=(1<<PWM2) | (1<<COM21) | (0<<COM20) | (1<<CTC2) | (0<<CS22) | (0<<CS21) | (1<<CS20);
-00005a e6e9      	LDI  R30,LOW(105)
-00005b bde5      	OUT  0x25,R30
-                 ; 0000 0051     TCNT2=0x00;
-00005c e0e0      	LDI  R30,LOW(0)
-00005d bde4      	OUT  0x24,R30
-                 ; 0000 0052     OCR2=0x00;
-00005e bde3      	OUT  0x23,R30
-                 ; 0000 0053 
-                 ; 0000 0054 
-                 ; 0000 0055 
-                 ; 0000 0056 
-                 ; 0000 0057 
-                 ; 0000 0058     // Analog Comparator initialization
-                 ; 0000 0059     // Analog Comparator: Off
-                 ; 0000 005A     // The Analog Comparator's positive input is
-                 ; 0000 005B     // connected to the AIN0 pin
-                 ; 0000 005C     // The Analog Comparator's negative input is
-                 ; 0000 005D     // connected to the AIN1 pin
-                 ; 0000 005E     ACSR=(1<<ACD) | (0<<ACBG) | (0<<ACO) | (0<<ACI) | (0<<ACIE) | (0<<ACIC) | (0<<ACIS1) | (0<<ACIS0);
-00005f e8e0      	LDI  R30,LOW(128)
-000060 b9e8      	OUT  0x8,R30
-                 ; 0000 005F     SFIOR=(0<<ACME);
-000061 e0e0      	LDI  R30,LOW(0)
-000062 bfe0      	OUT  0x30,R30
-                 ; 0000 0060 
-                 ; 0000 0061 
-                 ; 0000 0062 
-                 ; 0000 0063 
-                 ; 0000 0064 
-                 ; 0000 0065     while (1)
+000049 bbe8      	OUT  0x18,R30
+                 ; 0000 001F 
+                 ; 0000 0020     // Port C initialization
+                 ; 0000 0021     // Function: Bit7=In Bit6=In Bit5=In Bit4=In Bit3=Out Bit2=Out Bit1=Out Bit0=Out
+                 ; 0000 0022     DDRC=(0<<DDC7) | (0<<DDC6) | (0<<DDC5) | (0<<DDC4) | (1<<DDC3) | (1<<DDC2) | (1<<DDC1) | (1<<DDC0);
+00004a e0ef      	LDI  R30,LOW(15)
+00004b bbe4      	OUT  0x14,R30
+                 ; 0000 0023     // State: Bit7=T Bit6=T Bit5=T Bit4=T Bit3=0 Bit2=0 Bit1=0 Bit0=0
+                 ; 0000 0024     PORTC=(0<<PORTC7) | (0<<PORTC6) | (0<<PORTC5) | (0<<PORTC4) | (0<<PORTC3) | (0<<PORTC2) | (0<<PORTC1) | (0<<PORTC0);
+00004c e0e0      	LDI  R30,LOW(0)
+00004d bbe5      	OUT  0x15,R30
+                 ; 0000 0025 
+                 ; 0000 0026     // Port D initialization
+                 ; 0000 0027     // Function: Bit7=In Bit6=In Bit5=In Bit4=In Bit3=In Bit2=In Bit1=In Bit0=In
+                 ; 0000 0028     DDRD=(0<<DDD7) | (0<<DDD6) | (0<<DDD5) | (0<<DDD4) | (0<<DDD3) | (0<<DDD2) | (0<<DDD1) | (0<<DDD0);
+00004e bbe1      	OUT  0x11,R30
+                 ; 0000 0029     // State: Bit7=T Bit6=T Bit5=T Bit4=T Bit3=T Bit2=T Bit1=T Bit0=T
+                 ; 0000 002A     PORTD=(1<<PORTD7) | (0<<PORTD6) | (0<<PORTD5) | (0<<PORTD4) | (0<<PORTD3) | (0<<PORTD2) | (0<<PORTD1) | (0<<PORTD0);
+00004f e8e0      	LDI  R30,LOW(128)
+000050 bbe2      	OUT  0x12,R30
+                 ; 0000 002B 
+                 ; 0000 002C     while (1)
                  _0x3:
-                 ; 0000 0066     {
-                 ; 0000 0067         if (PINA==0b0001000)
-000063 b3e9      	IN   R30,0x19
-000064 30e8      	CPI  R30,LOW(0x8)
-000065 f441      	BRNE _0x6
-                 ; 0000 0068         {
-                 ; 0000 0069             PORTC.0=1;
-000066 9aa8      	SBI  0x15,0
-                 ; 0000 006A             OCR0=255;
-000067 d00d      	RCALL SUBOPT_0x0
-                 ; 0000 006B             OCR2=255;
-                 ; 0000 006C             PORTC.1=0;
-000068 98a9      	CBI  0x15,1
-                 ; 0000 006D             OCR0=255;
-000069 d00b      	RCALL SUBOPT_0x0
-                 ; 0000 006E             OCR2=255;
-                 ; 0000 006F             PORTC.2=1;
-00006a 9aaa      	SBI  0x15,2
-                 ; 0000 0070             OCR0=255;
-00006b d009      	RCALL SUBOPT_0x0
-                 ; 0000 0071             OCR2=255;
-                 ; 0000 0072             PORTC.3=0;
-00006c 98ab      	CBI  0x15,3
-                 ; 0000 0073             OCR0=255;
-00006d c002      	RJMP _0x11
-                 ; 0000 0074             OCR2=255;
-                 ; 0000 0075         }
-                 ; 0000 0076         else
-                 _0x6:
-                 ; 0000 0077         {
-                 ; 0000 0078             PORTC=-0X00;
-00006e e0e0      	LDI  R30,LOW(0)
-00006f bbe5      	OUT  0x15,R30
-                 ; 0000 0079             OCR0=255;
-                 _0x11:
-000070 efef      	LDI  R30,LOW(255)
-000071 bfec      	OUT  0x3C,R30
-                 ; 0000 007A             OCR2=255;
-000072 bde3      	OUT  0x23,R30
-                 ; 0000 007B         }
-                 ; 0000 007C 
-                 ; 0000 007D     }
-000073 cfef      	RJMP _0x3
-                 ; 0000 007E }
+                 ; 0000 002D     {
+                 ; 0000 002E         if (PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0/*STATE 1*/||PINA.0==0&&PINA.1==0 ...
+000051 99c8      	SBIC 0x19,0
+000052 c00c      	RJMP _0x7
+000053 99c9      	SBIC 0x19,1
+000054 c00a      	RJMP _0x7
+000055 99ca      	SBIC 0x19,2
+000056 c008      	RJMP _0x7
+000057 99cb      	SBIC 0x19,3
+000058 c006      	RJMP _0x7
+000059 99cc      	SBIC 0x19,4
+00005a c004      	RJMP _0x7
+00005b 99cd      	SBIC 0x19,5
+00005c c002      	RJMP _0x7
+00005d 9bce      	SBIS 0x19,6
+00005e c047      	RJMP _0x9
+                 _0x7:
+00005f 99c8      	SBIC 0x19,0
+000060 c00c      	RJMP _0xA
+000061 99c9      	SBIC 0x19,1
+000062 c00a      	RJMP _0xA
+000063 99ca      	SBIC 0x19,2
+000064 c008      	RJMP _0xA
+000065 9bcb      	SBIS 0x19,3
+000066 c006      	RJMP _0xA
+000067 99cc      	SBIC 0x19,4
+000068 c004      	RJMP _0xA
+000069 99cd      	SBIC 0x19,5
+00006a c002      	RJMP _0xA
+00006b 9bce      	SBIS 0x19,6
+00006c c039      	RJMP _0x9
+                 _0xA:
+00006d 9bc8      	SBIS 0x19,0
+00006e c00c      	RJMP _0xC
+00006f 99c9      	SBIC 0x19,1
+000070 c00a      	RJMP _0xC
+000071 99ca      	SBIC 0x19,2
+000072 c008      	RJMP _0xC
+000073 9bcb      	SBIS 0x19,3
+000074 c006      	RJMP _0xC
+000075 99cc      	SBIC 0x19,4
+000076 c004      	RJMP _0xC
+000077 99cd      	SBIC 0x19,5
+000078 c002      	RJMP _0xC
+000079 9bce      	SBIS 0x19,6
+00007a c02b      	RJMP _0x9
+                 _0xC:
+00007b 9bc8      	SBIS 0x19,0
+00007c c00c      	RJMP _0xE
+00007d 9bc9      	SBIS 0x19,1
+00007e c00a      	RJMP _0xE
+00007f 99ca      	SBIC 0x19,2
+000080 c008      	RJMP _0xE
+000081 9bcb      	SBIS 0x19,3
+000082 c006      	RJMP _0xE
+000083 99cc      	SBIC 0x19,4
+000084 c004      	RJMP _0xE
+000085 99cd      	SBIC 0x19,5
+000086 c002      	RJMP _0xE
+000087 9bce      	SBIS 0x19,6
+000088 c01d      	RJMP _0x9
+                 _0xE:
+000089 9bc8      	SBIS 0x19,0
+00008a c00c      	RJMP _0x10
+00008b 9bc9      	SBIS 0x19,1
+00008c c00a      	RJMP _0x10
+00008d 9bca      	SBIS 0x19,2
+00008e c008      	RJMP _0x10
+00008f 9bcb      	SBIS 0x19,3
+000090 c006      	RJMP _0x10
+000091 99cc      	SBIC 0x19,4
+000092 c004      	RJMP _0x10
+000093 99cd      	SBIC 0x19,5
+000094 c002      	RJMP _0x10
+000095 9bce      	SBIS 0x19,6
+000096 c00f      	RJMP _0x9
                  _0x10:
-000074 cfff      	RJMP _0x10
+000097 9bc8      	SBIS 0x19,0
+000098 c00c      	RJMP _0x12
+000099 9bc9      	SBIS 0x19,1
+00009a c00a      	RJMP _0x12
+00009b 9bca      	SBIS 0x19,2
+00009c c008      	RJMP _0x12
+00009d 9bcb      	SBIS 0x19,3
+00009e c006      	RJMP _0x12
+00009f 9bcc      	SBIS 0x19,4
+0000a0 c004      	RJMP _0x12
+0000a1 99cd      	SBIC 0x19,5
+0000a2 c002      	RJMP _0x12
+0000a3 9bce      	SBIS 0x19,6
+0000a4 c001      	RJMP _0x9
+                 _0x12:
+0000a5 c004      	RJMP _0x6
+                 _0x9:
+                 ; 0000 002F         {
+                 ; 0000 0030             PORTC.0=1;
+0000a6 9aa8      	SBI  0x15,0
+                 ; 0000 0031             PORTC.1=0;
+0000a7 98a9      	CBI  0x15,1
+                 ; 0000 0032             PORTC.2=1;
+0000a8 9aaa      	SBI  0x15,2
+                 ; 0000 0033             PORTC.3=0;
+0000a9 98ab      	CBI  0x15,3
+                 ; 0000 0034         }
+                 ; 0000 0035     }
+                 _0x6:
+0000aa cfa6      	RJMP _0x3
+                 ; 0000 0036 }
+                 _0x1D:
+0000ab cfff      	RJMP _0x1D
                  ; .FEND
                  
                  	.CSEG
-                 ;OPTIMIZER ADDED SUBROUTINE, CALLED 3 TIMES, CODE SIZE REDUCTION:1 WORDS
-                 SUBOPT_0x0:
-000075 efef      	LDI  R30,LOW(255)
-000076 bfec      	OUT  0x3C,R30
-000077 bde3      	OUT  0x23,R30
-000078 9508      	RET
-                 
                  
                  	.CSEG
                  ;END OF CODE MARKER
@@ -1389,41 +1371,41 @@ counted separately from r26..r31 here.
 
 .dseg memory usage only counts static data declared with .byte
 
-ATmega16 register use summary:
+ATmega16A register use summary:
 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 r5 :   0 r6 :   0 r7 :   0 
 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 r13:   0 r14:   0 r15:   0 
 r16:   0 r17:   0 r18:   0 r19:   0 r20:   0 r21:   0 r22:   0 r23:   0 
-r24:   4 r25:   1 r26:   2 r27:   1 r28:   1 r29:   1 r30:  50 r31:   2 
+r24:   4 r25:   1 r26:   2 r27:   1 r28:   1 r29:   1 r30:  22 r31:   2 
 x  :   2 y  :   0 z  :   0 
 Registers used: 9 out of 35 (25.7%)
 
-ATmega16 instruction use summary:
+ATmega16A instruction use summary:
 .lds  :   0 .lds.l:   0 .sts  :   0 .sts.l:   0 adc   :   0 add   :   0 
 adiw  :   0 and   :   0 andi  :   0 asr   :   0 bclr  :   0 bld   :   0 
 brbc  :   0 brbs  :   0 brcc  :   0 brcs  :   0 break :   0 breq  :   0 
 brge  :   0 brhc  :   0 brhs  :   0 brid  :   0 brie  :   0 brlo  :   0 
-brlt  :   0 brmi  :   0 brne  :   3 brpl  :   0 brsh  :   0 brtc  :   0 
+brlt  :   0 brmi  :   0 brne  :   2 brpl  :   0 brsh  :   0 brtc  :   0 
 brts  :   0 brvc  :   0 brvs  :   0 bset  :   0 bst   :   0 call  :   0 
 cbi   :   2 cbr   :   0 clc   :   0 clh   :   0 cli   :   1 cln   :   0 
 clr   :   2 cls   :   0 clt   :   0 clv   :   0 clz   :   0 com   :   0 
-cp    :   0 cpc   :   0 cpi   :   1 cpse  :   0 dec   :   1 des   :   0 
+cp    :   0 cpc   :   0 cpi   :   0 cpse  :   0 dec   :   1 des   :   0 
 eor   :   0 fmul  :   0 fmuls :   0 fmulsu:   0 icall :   0 ijmp  :   0 
-in    :   1 inc   :   0 jmp   :  22 ld    :   0 ldd   :   0 ldi   :  26 
+in    :   0 inc   :   0 jmp   :  22 ld    :   0 ldd   :   0 ldi   :  15 
 lds   :   0 lpm   :   0 lsl   :   0 lsr   :   0 mov   :   0 movw  :   0 
 mul   :   0 muls  :   0 mulsu :   0 neg   :   0 nop   :   0 or    :   0 
-ori   :   0 out   :  28 pop   :   0 push  :   0 rcall :   3 ret   :   1 
-reti  :   0 rjmp  :   3 rol   :   0 ror   :   0 sbc   :   0 sbci  :   0 
-sbi   :   2 sbic  :   0 sbis  :   0 sbiw  :   1 sbr   :   0 sbrc  :   0 
+ori   :   0 out   :  13 pop   :   0 push  :   0 rcall :   0 ret   :   0 
+reti  :   0 rjmp  :  45 rol   :   0 ror   :   0 sbc   :   0 sbci  :   0 
+sbi   :   2 sbic  :  21 sbis  :  21 sbiw  :   1 sbr   :   0 sbrc  :   0 
 sbrs  :   0 sec   :   0 seh   :   0 sei   :   0 sen   :   0 ser   :   0 
 ses   :   0 set   :   0 sev   :   0 sez   :   0 sleep :   0 spm   :   0 
 st    :   2 std   :   0 sts   :   0 sub   :   0 subi  :   0 swap  :   0 
 tst   :   0 wdr   :   0 
-Instructions used: 16 out of 116 (13.8%)
+Instructions used: 14 out of 116 (12.1%)
 
-ATmega16 memory use summary [bytes]:
+ATmega16A memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x0000f2    242      0    242   16384   1.5%
+[.cseg] 0x000000 0x000158    344      0    344   16384   2.1%
 [.dseg] 0x000060 0x000160      0      0      0    1024   0.0%
 [.eseg] 0x000000 0x000000      0      0      0     512   0.0%
 

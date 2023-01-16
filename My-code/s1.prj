@@ -5,11 +5,11 @@ ActiveBuildConfiguration=0
 CV=3.12 Advanced
 A=
 C=
-D=13/01/2023
+D=16/01/2023
 Files=1
-F1=code.c
+F1=s1.c
 OpenedFiles=1
-OF1=code.c
+OF1=s1.c
 Active1=1
 DebugOutputListFilesDirectory=Debug\List
 DebugOutputObjectFilesDirectory=Debug
@@ -19,18 +19,19 @@ OutputListFilesDirectory=Release\List
 OutputObjectFilesDirectory=Release
 OutputExecutableFilesDirectory=Release\Exe
 OutputLinkerFilesDirectory=Release\Exe
-AllowDisplayFunctionCallTree=1
+AllowDisplayFunctionCallTree=0
 CleanUp=2
+TimeStamp0=1446033007
 EditorPanelMode=0
 ActiveEditorPanel=0
 Active0=0
 EditorPanel0=0
 PageIndex0=0
 EditorPanel1=0
-TimeStamp1=1445820992
+TimeStamp1=1446033007
 PageIndex1=1
 [CompilerDebug]
-Chip=ATmega16
+Chip=ATmega16A
 CPUClock=8000000
 MemoryModel=1
 OptimizeSize=1
@@ -127,12 +128,12 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1445829405
-Build=17
+COFFileTimeStamp=1446034350
+Build=4
 [DefinedSymbolsDebug]
 Count=0
 [Compiler]
-Chip=ATmega16
+Chip=ATmega16A
 CPUClock=8000000
 MemoryModel=1
 OptimizeSize=1
@@ -230,7 +231,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=17
+Build=4
 [DefinedSymbols]
 Count=0
 [StartUp]
@@ -310,9 +311,36 @@ PreserveEEPROM=0
 VerifyProgramming=1
 ProgrammingCounter=0
 RunUserProg=0
+[Bookmarks0]
+Row=0
+Column=0
+ScrollPosX=0
+ScrollPosY=0
+TimeStamp=1446033007
+[BookmarksFoldedCode]
+Files=1
+F1=s1.c
+[Bookmarks1]
+TimeStamp=1446033007
+Row=5
+Column=10
+ScrollPosX=0
+ScrollPosY=15
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode1]
+Blocks=0
 [BuildInfoCompiler]
 L1=Build configuration: Debug
-L2=Chip: ATmega16
+L2=Chip: ATmega16A
 L3=Clock frequency: 8.000000 MHz
 L4=Program type: Application
 L5=Memory model: Small
@@ -327,9 +355,9 @@ L13=Enhanced function parameters passing: Yes
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 16
-L18=884 line(s) compiled
-L19=No errors
+L17=Build: 4
+L18=798 line(s) compiled
+L19=1 error(s)
 L20=No warnings
 L21=
 L22=Bit variables size: 0 byte(s)
@@ -346,169 +374,27 @@ L32=
 L33=Heap size: 0 byte(s)
 L34=
 L35=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-L36=Program size: 121 words (242 bytes), 1.5% of FLASH
-L37=1 words (2 bytes), 0.8% reduced by Code Compression
-Lines=37
+Lines=35
+L36=Program size: 172 words (344 bytes), 2.1% of FLASH
+L37=0 words (0 bytes), 0.0% reduced by Code Compression
 [BuildInfoAssembler]
+Lines=0
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=G:\meriikh\masiryab\Mycode\Debug\List\code.asm(1372): No EEPROM data, deleting G:\meriikh\masiryab\Mycode\Debug\Exe\code.eep
+L4=G:\meriikh\Follow the line\Follow-the-line-robot\My-code\Debug\List\s1.asm(1354): No EEPROM data, deleting G:\meriikh\Follow the line\Follow-the-line-robot\My-code\Debug\Exe\s1.eep
 L5=
-L6=ATmega16 memory use summary [bytes]:
+L6=ATmega16A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x0000f2    242      0    242   16384   1.5%
+L9=[.cseg] 0x000000 0x000158    344      0    344   16384   2.1%
 L10=[.dseg] 0x000060 0x000160      0      0      0    1024   0.0%
 L11=[.eseg] 0x000000 0x000000      0      0      0     512   0.0%
 L12=
-Lines=12
-[BookmarksFoldedCode]
-Files=7
-F1=C:\cvavr\inc\delay.h
-F2=C:\cvavr\inc\mega16.h
-F3=C:\cvavr\inc\mega16_bits.h
-F4=Debug\List\code.asm
-F5=Debug\List\code.lst
-F6=Debug\List\code.map
-F7=code.c
-[Bookmarks1]
-TimeStamp=711004640
-Row=0
-Column=0
-ScrollPosX=0
-ScrollPosY=0
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
-[FoldedCode1]
-Blocks=0
-[Bookmarks2]
-TimeStamp=982408697
-Row=0
-Column=0
-ScrollPosX=0
-ScrollPosY=0
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
-[FoldedCode2]
-Blocks=0
-[Bookmarks3]
-TimeStamp=982082087
-Row=0
-Column=0
-ScrollPosX=0
-ScrollPosY=0
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
-[FoldedCode3]
-Blocks=0
-[Bookmarks4]
-TimeStamp=1445819977
-Row=0
-Column=0
-ScrollPosX=0
-ScrollPosY=0
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
-[FoldedCode4]
-Blocks=0
-[Bookmarks5]
-TimeStamp=1445819977
-Row=0
-Column=0
-ScrollPosX=0
-ScrollPosY=0
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
-[FoldedCode5]
-Blocks=0
-[Bookmarks6]
-TimeStamp=1445819977
-Row=0
-Column=0
-ScrollPosX=0
-ScrollPosY=0
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
-[FoldedCode6]
-Blocks=0
 [HeadersList]
 Files=1
-F1=G:\meriikh\masiryab\Mycode\code.c
+F1=G:\meriikh\Follow the line\Follow-the-line-robot\My-code\s1.c
 [Header1]
-Files=3
-F1=C:\cvavr\inc\mega16.h
+Files=2
+F1=C:\cvavr\inc\mega16a.h
 F2=C:\cvavr\inc\mega16_bits.h
-F3=C:\cvavr\inc\delay.h
-[Bookmarks0]
-Row=146
-Column=0
-ScrollPosX=0
-ScrollPosY=112
-TimeStamp=1445829408
-[Bookmarks7]
-TimeStamp=1445820992
-Row=102
-Column=27
-ScrollPosX=0
-ScrollPosY=96
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
-[FoldedCode7]
-Blocks=0

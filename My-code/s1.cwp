@@ -1,7 +1,7 @@
 [CodeWizard]
 Toolset=AVR
 [Chip]
-Type=ATmega16
+Type=ATmega16A
 CPUClock=8
 XTALDivEnabled=0
 XTALDivValue=2
@@ -28,11 +28,11 @@ InterruptEnabled=0
 [Ports]
 DDR0=0
 PORT0=0
-DDR1=8
+DDR1=0
 PORT1=0
 DDR2=15
 PORT2=0
-DDR3=128
+DDR3=0
 PORT3=0
 DDR4=0
 PORT4=0
@@ -81,9 +81,9 @@ INT7Mode=0
 PCMSK=0
 [Timer0]
 T0ClkSource=0
-T0Prescaler=1
-T0Mode=3
-T0Output=1
+T0Prescaler=0
+T0Mode=0
+T0Output=0
 T0OutputB=0
 T0OverflowInt=0
 T0CaptureInt=0
@@ -144,9 +144,9 @@ TOCC7=-1
 T3InpCaptureReg=0
 [Timer2]
 T2ClkSource=0
-T2Prescaler=1
-T2Mode=3
-T2Output=1
+T2Prescaler=0
+T2Mode=0
+T2Output=0
 T2OutputB=0
 T2OverflowInt=0
 T2CompareInt=0
@@ -497,7 +497,7 @@ DS1302ChargeResistor=0
 [ProjectInformation]
 ProjectName=
 ProjectVersion=
-ProjectDate=13/01/2023
+ProjectDate=16/01/2023
 ProjectAuthor=
 ProjectCompany=
 CommentLines=0
