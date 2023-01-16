@@ -1,5 +1,5 @@
-# Follow-the-line-robot\r\n
-helper code and Technical view  
+# Follow-the-line-robot
+helper code and Technical view \r\n 
 Line tracking robot with 7 sensors
 Chip type               : ATmega16
 Program type            : Application
