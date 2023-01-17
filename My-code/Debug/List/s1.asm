@@ -1446,6 +1446,51 @@ _0x20:
 	SBIS 0x19,6
 	RJMP _0x9
 _0x22:
+	SBIS 0x19,0
+	RJMP _0x24
+	SBIC 0x19,1
+	RJMP _0x24
+	SBIS 0x19,2
+	RJMP _0x24
+	SBIC 0x19,3
+	RJMP _0x24
+	SBIS 0x19,4
+	RJMP _0x24
+	SBIC 0x19,5
+	RJMP _0x24
+	SBIC 0x19,6
+	RJMP _0x9
+_0x24:
+	SBIS 0x19,0
+	RJMP _0x26
+	SBIC 0x19,1
+	RJMP _0x26
+	SBIS 0x19,2
+	RJMP _0x26
+	SBIS 0x19,3
+	RJMP _0x26
+	SBIS 0x19,4
+	RJMP _0x26
+	SBIC 0x19,5
+	RJMP _0x26
+	SBIC 0x19,6
+	RJMP _0x9
+_0x26:
+	SBIC 0x19,0
+	RJMP _0x28
+	SBIC 0x19,1
+	RJMP _0x28
+	SBIS 0x19,2
+	RJMP _0x28
+	SBIS 0x19,3
+	RJMP _0x28
+	SBIS 0x19,4
+	RJMP _0x28
+	SBIS 0x19,5
+	RJMP _0x28
+	SBIS 0x19,6
+	RJMP _0x9
+_0x28:
 	RJMP _0x6
 _0x9:
 ; 0000 002F         {
@@ -1458,12 +1503,171 @@ _0x9:
 ; 0000 0033             PORTC.3=0;
 	CBI  0x15,3
 ; 0000 0034         }
-; 0000 0035     }
+; 0000 0035         if (PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==1&&PINA.5==1&&PINA.6==1)
 _0x6:
+	SBIC 0x19,0
+	RJMP _0x34
+	SBIC 0x19,1
+	RJMP _0x34
+	SBIC 0x19,2
+	RJMP _0x34
+	SBIC 0x19,3
+	RJMP _0x34
+	SBIS 0x19,4
+	RJMP _0x34
+	SBIS 0x19,5
+	RJMP _0x34
+	SBIC 0x19,6
+	RJMP _0x35
+_0x34:
+	RJMP _0x33
+_0x35:
+; 0000 0036         {
+; 0000 0037             if (PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==1)
+	SBIC 0x19,0
+	RJMP _0x37
+	SBIC 0x19,1
+	RJMP _0x37
+	SBIC 0x19,2
+	RJMP _0x37
+	SBIC 0x19,3
+	RJMP _0x37
+	SBIC 0x19,4
+	RJMP _0x37
+	SBIC 0x19,5
+	RJMP _0x37
+	SBIC 0x19,6
+	RJMP _0x38
+_0x37:
+	RJMP _0x36
+_0x38:
+; 0000 0038             {
+; 0000 0039                 PORTC.0=1;
+	SBI  0x15,0
+; 0000 003A                 PORTC.1=0;
+	CBI  0x15,1
+; 0000 003B                 PORTC.2=0;
+	CBI  0x15,2
+; 0000 003C                 PORTC.3=1;
+	SBI  0x15,3
+; 0000 003D             }
+; 0000 003E             if (PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==1&&PINA.6==0)
+_0x36:
+; 0000 003F             {
+; 0000 0040                 PORTC.0=1;
+; 0000 0041                 PORTC.1=0;
+; 0000 0042                 PORTC.2=0;
+; 0000 0043                 PORTC.3=0;
+; 0000 0044             }
+; 0000 0045             else
+; 0000 0046             {
+; 0000 0047                 PORTC.0=1;
+_0x78:
+	SBI  0x15,0
+; 0000 0048                 PORTC.1=0;
+	CBI  0x15,1
+; 0000 0049                 PORTC.2=0;
+	CBI  0x15,2
+; 0000 004A                 PORTC.3=0;
+	CBI  0x15,3
+; 0000 004B             }
+; 0000 004C         }
+; 0000 004D         if (PINA.0==1&&PINA.1==1&&PINA.2==1&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0)
+_0x33:
+	SBIS 0x19,0
+	RJMP _0x56
+	SBIS 0x19,1
+	RJMP _0x56
+	SBIS 0x19,2
+	RJMP _0x56
+	SBIC 0x19,3
+	RJMP _0x56
+	SBIC 0x19,4
+	RJMP _0x56
+	SBIC 0x19,5
+	RJMP _0x56
+	SBIS 0x19,6
+	RJMP _0x57
+_0x56:
+	RJMP _0x55
+_0x57:
+; 0000 004E         {
+; 0000 004F             if (PINA.0==1&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0)
+	SBIS 0x19,0
+	RJMP _0x59
+	SBIC 0x19,1
+	RJMP _0x59
+	SBIC 0x19,2
+	RJMP _0x59
+	SBIC 0x19,3
+	RJMP _0x59
+	SBIC 0x19,4
+	RJMP _0x59
+	SBIC 0x19,5
+	RJMP _0x59
+	SBIS 0x19,6
+	RJMP _0x5A
+_0x59:
+	RJMP _0x58
+_0x5A:
+; 0000 0050             {
+; 0000 0051                 PORTC.0=0;
+	CBI  0x15,0
+; 0000 0052                 PORTC.1=1;
+	SBI  0x15,1
+; 0000 0053                 PORTC.2=1;
+	SBI  0x15,2
+; 0000 0054                 PORTC.3=0;
+	CBI  0x15,3
+; 0000 0055             }
+; 0000 0056             if (PINA.0==0&&PINA.1==1&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0)
+_0x58:
+	SBIC 0x19,0
+	RJMP _0x64
+	SBIS 0x19,1
+	RJMP _0x64
+	SBIC 0x19,2
+	RJMP _0x64
+	SBIC 0x19,3
+	RJMP _0x64
+	SBIC 0x19,4
+	RJMP _0x64
+	SBIC 0x19,5
+	RJMP _0x64
+	SBIS 0x19,6
+	RJMP _0x65
+_0x64:
+	RJMP _0x63
+_0x65:
+; 0000 0057             {
+; 0000 0058                 PORTC.0=0;
+	CBI  0x15,0
+; 0000 0059                 PORTC.1=1;
+	SBI  0x15,1
+; 0000 005A                 PORTC.2=0;
+	RJMP _0x79
+; 0000 005B                 PORTC.3=0;
+; 0000 005C             }
+; 0000 005D             else
+_0x63:
+; 0000 005E             {
+; 0000 005F                 PORTC.0=1;
+	SBI  0x15,0
+; 0000 0060                 PORTC.1=0;
+	CBI  0x15,1
+; 0000 0061                 PORTC.2=0;
+_0x79:
+	CBI  0x15,2
+; 0000 0062                 PORTC.3=0;
+	CBI  0x15,3
+; 0000 0063             }
+; 0000 0064         }
+; 0000 0065     }
+_0x55:
 	RJMP _0x3
-; 0000 0036 }
-_0x2D:
-	RJMP _0x2D
+; 0000 0066 }
+_0x77:
+	RJMP _0x77
 ; .FEND
 
 	.CSEG
