@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.1.30  G:\meriikh\Follow the line\Follow-the-line-robot\My-code\Debug\List\s1.asm Mon Jan 16 23:29:27 2023
+AVRASM ver. 2.1.30  G:\meriikh\Follow the line\Follow-the-line-robot\My-code\Debug\List\s1.asm Mon Jan 16 23:48:46 2023
 
                  
                  
@@ -1253,7 +1253,7 @@ AVRASM ver. 2.1.30  G:\meriikh\Follow the line\Follow-the-line-robot\My-code\Deb
 00005b 99cd      	SBIC 0x19,5
 00005c c002      	RJMP _0x7
 00005d 9bce      	SBIS 0x19,6
-00005e c047      	RJMP _0x9
+00005e c0b7      	RJMP _0x9
                  _0x7:
 00005f 99c8      	SBIC 0x19,0
 000060 c00c      	RJMP _0xA
@@ -1268,7 +1268,7 @@ AVRASM ver. 2.1.30  G:\meriikh\Follow the line\Follow-the-line-robot\My-code\Deb
 000069 99cd      	SBIC 0x19,5
 00006a c002      	RJMP _0xA
 00006b 9bce      	SBIS 0x19,6
-00006c c039      	RJMP _0x9
+00006c c0a9      	RJMP _0x9
                  _0xA:
 00006d 9bc8      	SBIS 0x19,0
 00006e c00c      	RJMP _0xC
@@ -1283,7 +1283,7 @@ AVRASM ver. 2.1.30  G:\meriikh\Follow the line\Follow-the-line-robot\My-code\Deb
 000077 99cd      	SBIC 0x19,5
 000078 c002      	RJMP _0xC
 000079 9bce      	SBIS 0x19,6
-00007a c02b      	RJMP _0x9
+00007a c09b      	RJMP _0x9
                  _0xC:
 00007b 9bc8      	SBIS 0x19,0
 00007c c00c      	RJMP _0xE
@@ -1298,7 +1298,7 @@ AVRASM ver. 2.1.30  G:\meriikh\Follow the line\Follow-the-line-robot\My-code\Deb
 000085 99cd      	SBIC 0x19,5
 000086 c002      	RJMP _0xE
 000087 9bce      	SBIS 0x19,6
-000088 c01d      	RJMP _0x9
+000088 c08d      	RJMP _0x9
                  _0xE:
 000089 9bc8      	SBIS 0x19,0
 00008a c00c      	RJMP _0x10
@@ -1313,7 +1313,7 @@ AVRASM ver. 2.1.30  G:\meriikh\Follow the line\Follow-the-line-robot\My-code\Deb
 000093 99cd      	SBIC 0x19,5
 000094 c002      	RJMP _0x10
 000095 9bce      	SBIS 0x19,6
-000096 c00f      	RJMP _0x9
+000096 c07f      	RJMP _0x9
                  _0x10:
 000097 9bc8      	SBIS 0x19,0
 000098 c00c      	RJMP _0x12
@@ -1328,26 +1328,146 @@ AVRASM ver. 2.1.30  G:\meriikh\Follow the line\Follow-the-line-robot\My-code\Deb
 0000a1 99cd      	SBIC 0x19,5
 0000a2 c002      	RJMP _0x12
 0000a3 9bce      	SBIS 0x19,6
-0000a4 c001      	RJMP _0x9
+0000a4 c071      	RJMP _0x9
                  _0x12:
-0000a5 c004      	RJMP _0x6
+0000a5 9bc8      	SBIS 0x19,0
+0000a6 c00c      	RJMP _0x14
+0000a7 9bc9      	SBIS 0x19,1
+0000a8 c00a      	RJMP _0x14
+0000a9 9bca      	SBIS 0x19,2
+0000aa c008      	RJMP _0x14
+0000ab 9bcb      	SBIS 0x19,3
+0000ac c006      	RJMP _0x14
+0000ad 9bcc      	SBIS 0x19,4
+0000ae c004      	RJMP _0x14
+0000af 9bcd      	SBIS 0x19,5
+0000b0 c002      	RJMP _0x14
+0000b1 9bce      	SBIS 0x19,6
+0000b2 c063      	RJMP _0x9
+                 _0x14:
+0000b3 9bc8      	SBIS 0x19,0
+0000b4 c00c      	RJMP _0x16
+0000b5 9bc9      	SBIS 0x19,1
+0000b6 c00a      	RJMP _0x16
+0000b7 9bca      	SBIS 0x19,2
+0000b8 c008      	RJMP _0x16
+0000b9 9bcb      	SBIS 0x19,3
+0000ba c006      	RJMP _0x16
+0000bb 9bcc      	SBIS 0x19,4
+0000bc c004      	RJMP _0x16
+0000bd 9bcd      	SBIS 0x19,5
+0000be c002      	RJMP _0x16
+0000bf 99ce      	SBIC 0x19,6
+0000c0 c055      	RJMP _0x9
+                 _0x16:
+0000c1 9bc8      	SBIS 0x19,0
+0000c2 c00c      	RJMP _0x18
+0000c3 99c9      	SBIC 0x19,1
+0000c4 c00a      	RJMP _0x18
+0000c5 9bca      	SBIS 0x19,2
+0000c6 c008      	RJMP _0x18
+0000c7 9bcb      	SBIS 0x19,3
+0000c8 c006      	RJMP _0x18
+0000c9 99cc      	SBIC 0x19,4
+0000ca c004      	RJMP _0x18
+0000cb 99cd      	SBIC 0x19,5
+0000cc c002      	RJMP _0x18
+0000cd 9bce      	SBIS 0x19,6
+0000ce c047      	RJMP _0x9
+                 _0x18:
+0000cf 99c8      	SBIC 0x19,0
+0000d0 c00c      	RJMP _0x1A
+0000d1 99c9      	SBIC 0x19,1
+0000d2 c00a      	RJMP _0x1A
+0000d3 9bca      	SBIS 0x19,2
+0000d4 c008      	RJMP _0x1A
+0000d5 9bcb      	SBIS 0x19,3
+0000d6 c006      	RJMP _0x1A
+0000d7 99cc      	SBIC 0x19,4
+0000d8 c004      	RJMP _0x1A
+0000d9 99cd      	SBIC 0x19,5
+0000da c002      	RJMP _0x1A
+0000db 9bce      	SBIS 0x19,6
+0000dc c039      	RJMP _0x9
+                 _0x1A:
+0000dd 99c8      	SBIC 0x19,0
+0000de c00c      	RJMP _0x1C
+0000df 99c9      	SBIC 0x19,1
+0000e0 c00a      	RJMP _0x1C
+0000e1 9bca      	SBIS 0x19,2
+0000e2 c008      	RJMP _0x1C
+0000e3 9bcb      	SBIS 0x19,3
+0000e4 c006      	RJMP _0x1C
+0000e5 9bcc      	SBIS 0x19,4
+0000e6 c004      	RJMP _0x1C
+0000e7 99cd      	SBIC 0x19,5
+0000e8 c002      	RJMP _0x1C
+0000e9 9bce      	SBIS 0x19,6
+0000ea c02b      	RJMP _0x9
+                 _0x1C:
+0000eb 99c8      	SBIC 0x19,0
+0000ec c00c      	RJMP _0x1E
+0000ed 99c9      	SBIC 0x19,1
+0000ee c00a      	RJMP _0x1E
+0000ef 9bca      	SBIS 0x19,2
+0000f0 c008      	RJMP _0x1E
+0000f1 9bcb      	SBIS 0x19,3
+0000f2 c006      	RJMP _0x1E
+0000f3 9bcc      	SBIS 0x19,4
+0000f4 c004      	RJMP _0x1E
+0000f5 9bcd      	SBIS 0x19,5
+0000f6 c002      	RJMP _0x1E
+0000f7 9bce      	SBIS 0x19,6
+0000f8 c01d      	RJMP _0x9
+                 _0x1E:
+0000f9 99c8      	SBIC 0x19,0
+0000fa c00c      	RJMP _0x20
+0000fb 9bc9      	SBIS 0x19,1
+0000fc c00a      	RJMP _0x20
+0000fd 9bca      	SBIS 0x19,2
+0000fe c008      	RJMP _0x20
+0000ff 9bcb      	SBIS 0x19,3
+000100 c006      	RJMP _0x20
+000101 9bcc      	SBIS 0x19,4
+000102 c004      	RJMP _0x20
+000103 9bcd      	SBIS 0x19,5
+000104 c002      	RJMP _0x20
+000105 9bce      	SBIS 0x19,6
+000106 c00f      	RJMP _0x9
+                 _0x20:
+000107 99c8      	SBIC 0x19,0
+000108 c00c      	RJMP _0x22
+000109 99c9      	SBIC 0x19,1
+00010a c00a      	RJMP _0x22
+00010b 9bca      	SBIS 0x19,2
+00010c c008      	RJMP _0x22
+00010d 9bcb      	SBIS 0x19,3
+00010e c006      	RJMP _0x22
+00010f 9bcc      	SBIS 0x19,4
+000110 c004      	RJMP _0x22
+000111 9bcd      	SBIS 0x19,5
+000112 c002      	RJMP _0x22
+000113 9bce      	SBIS 0x19,6
+000114 c001      	RJMP _0x9
+                 _0x22:
+000115 c004      	RJMP _0x6
                  _0x9:
                  ; 0000 002F         {
                  ; 0000 0030             PORTC.0=1;
-0000a6 9aa8      	SBI  0x15,0
+000116 9aa8      	SBI  0x15,0
                  ; 0000 0031             PORTC.1=0;
-0000a7 98a9      	CBI  0x15,1
+000117 98a9      	CBI  0x15,1
                  ; 0000 0032             PORTC.2=1;
-0000a8 9aaa      	SBI  0x15,2
+000118 9aaa      	SBI  0x15,2
                  ; 0000 0033             PORTC.3=0;
-0000a9 98ab      	CBI  0x15,3
+000119 98ab      	CBI  0x15,3
                  ; 0000 0034         }
                  ; 0000 0035     }
                  _0x6:
-0000aa cfa6      	RJMP _0x3
+00011a cf36      	RJMP _0x3
                  ; 0000 0036 }
-                 _0x1D:
-0000ab cfff      	RJMP _0x1D
+                 _0x2D:
+00011b cfff      	RJMP _0x2D
                  ; .FEND
                  
                  	.CSEG
@@ -1394,8 +1514,8 @@ in    :   0 inc   :   0 jmp   :  22 ld    :   0 ldd   :   0 ldi   :  15
 lds   :   0 lpm   :   0 lsl   :   0 lsr   :   0 mov   :   0 movw  :   0 
 mul   :   0 muls  :   0 mulsu :   0 neg   :   0 nop   :   0 or    :   0 
 ori   :   0 out   :  13 pop   :   0 push  :   0 rcall :   0 ret   :   0 
-reti  :   0 rjmp  :  45 rol   :   0 ror   :   0 sbc   :   0 sbci  :   0 
-sbi   :   2 sbic  :  21 sbis  :  21 sbiw  :   1 sbr   :   0 sbrc  :   0 
+reti  :   0 rjmp  : 101 rol   :   0 ror   :   0 sbc   :   0 sbci  :   0 
+sbi   :   2 sbic  :  37 sbis  :  61 sbiw  :   1 sbr   :   0 sbrc  :   0 
 sbrs  :   0 sec   :   0 seh   :   0 sei   :   0 sen   :   0 ser   :   0 
 ses   :   0 set   :   0 sev   :   0 sez   :   0 sleep :   0 spm   :   0 
 st    :   2 std   :   0 sts   :   0 sub   :   0 subi  :   0 swap  :   0 
@@ -1405,7 +1525,7 @@ Instructions used: 14 out of 116 (12.1%)
 ATmega16A memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x000158    344      0    344   16384   2.1%
+[.cseg] 0x000000 0x000238    568      0    568   16384   3.5%
 [.dseg] 0x000060 0x000160      0      0      0    1024   0.0%
 [.eseg] 0x000000 0x000000      0      0      0     512   0.0%
 
