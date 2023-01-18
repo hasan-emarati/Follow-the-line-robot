@@ -50,53 +50,54 @@ void main(void)
             PORTC.2=1;
             PORTC.3=0;
         } 
-        if (PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==1&&PINA.5==1&&PINA.6==1)
+        if (PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==1&&PINA.5==1&&PINA.6==1) // R
         {
-            if (PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==1)
-            {
-                PORTC.0=1;
-                PORTC.1=0;
-                PORTC.2=0;
-                PORTC.3=1;  
-            }
-            if (PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==1&&PINA.6==0)
-            {
-                PORTC.0=1;
-                PORTC.1=0;
-                PORTC.2=0;
-                PORTC.3=0;
-            }
-            else
-            {
-                PORTC.0=1;
-                PORTC.1=0;
-                PORTC.2=0;
-                PORTC.3=0;
-            }
-        }  
-        if (PINA.0==1&&PINA.1==1&&PINA.2==1&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0)
+            PORTC.0=1;
+            PORTC.1=0;
+            PORTC.2=0;
+            PORTC.3=0;
+        }
+        if (PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==1) // R
         {
-            if (PINA.0==1&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0)
-            {
-                PORTC.0=0;
-                PORTC.1=1;
-                PORTC.2=1;
-                PORTC.3=0;
-            }
-            if (PINA.0==0&&PINA.1==1&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0)
-            {
-                PORTC.0=0;
-                PORTC.1=1;
-                PORTC.2=0;
-                PORTC.3=0;
-            }
-            else
-            {
-                PORTC.0=1;
-                PORTC.1=0;
-                PORTC.2=0;
-                PORTC.3=0;
-            }
+            PORTC.0=1;
+            PORTC.1=0;
+            PORTC.2=0;
+            PORTC.3=1;
+        }
+        if (PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==1&&PINA.5==0&&PINA.6==0) // R
+        {
+            PORTC.0=1;
+            PORTC.1=0;
+            PORTC.2=0;
+            PORTC.3=0;
+        }
+        if (PINA.0==1&&PINA.1==1&&PINA.2==1&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // R
+        {
+            PORTC.0=0;
+            PORTC.1=0;
+            PORTC.2=1;
+            PORTC.3=0;
+        }
+        if (PINA.0==1&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // R
+        {
+            PORTC.0=0;
+            PORTC.1=1;
+            PORTC.2=1;
+            PORTC.3=0;
+        }
+        if (PINA.0==0&&PINA.1==1&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // R
+        {
+            PORTC.0=0;
+            PORTC.1=0;
+            PORTC.2=1;
+            PORTC.3=0;
+        }
+        if (PINA.0==0&&PINA.1==0&&PINA.2==1&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // R
+        {
+            PORTC.0=0;
+            PORTC.1=0;
+            PORTC.2=1;
+            PORTC.3=0;
         }
     }
 }
