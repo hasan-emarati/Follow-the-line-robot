@@ -16,6 +16,7 @@ Data Stack size         : 256
 *******************************************************/
 
 #include <mega16a.h>
+#include "mega16a.h"
 
 void main(void)
 {
@@ -43,7 +44,7 @@ void main(void)
     
     while (1)
     {
-        if (PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0/*STATE 1*/||PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==1&&PINA.4==0&&PINA.5==0&&PINA.6==0/*STATE 2*/||PINA.0==1&&PINA.1==0&&PINA.2==0&&PINA.3==1&&PINA.4==0&&PINA.5==0&&PINA.6==0/*STATE 3*/||PINA.0==1&&PINA.1==1&&PINA.2==0&&PINA.3==1&&PINA.4==0&&PINA.5==0&&PINA.6==0/*STATE 4*/||PINA.0==1&&PINA.1==1&&PINA.2==1&&PINA.3==1&&PINA.4==0&&PINA.5==0&&PINA.6==0/*STATE 5*/||PINA.0==1&&PINA.1==1&&PINA.2==1&&PINA.3==1&&PINA.4==1&&PINA.5==0&&PINA.6==0/*STATE 6*/||PINA.0==1&&PINA.1==1&&PINA.2==1&&PINA.3==1&&PINA.4==1&&PINA.5==1&&PINA.6==0/*STATE 7*/||PINA.0==1&&PINA.1==1&&PINA.2==1&&PINA.3==1&&PINA.4==1&&PINA.5==1&&PINA.6==1/*STATE 8*/||PINA.0==1&&PINA.1==0&&PINA.2==1&&PINA.3==1&&PINA.4==0&&PINA.5==0&&PINA.6==0/*STATE 9*/||PINA.0==0&&PINA.1==0&&PINA.2==1&&PINA.3==1&&PINA.4==0&&PINA.5==0&&PINA.6==0/*STATE 10*/||PINA.0==0&&PINA.1==0&&PINA.2==1&&PINA.3==1&&PINA.4==1&&PINA.5==0&&PINA.6==0/*STATE 11*/||PINA.0==0&&PINA.1==0&&PINA.2==1&&PINA.3==1&&PINA.4==1&&PINA.5==1&&PINA.6==0/*STATE 12*/||PINA.0==0&&PINA.1==1&&PINA.2==1&&PINA.3==1&&PINA.4==1&&PINA.5==1&&PINA.6==0/*STATE 13*/||PINA.0==0&&PINA.1==0&&PINA.2==1&&PINA.3==1&&PINA.4==1&&PINA.5==1&&PINA.6==0/*STATE 14*/||PINA.0==1&&PINA.1==0&&PINA.2==1&&PINA.3==0&&PINA.4==1&&PINA.5==0&&PINA.6==1/*STATE 15*/||PINA.0==1&&PINA.1==0&&PINA.2==1&&PINA.3==1&&PINA.4==1&&PINA.5==0&&PINA.6==1/*STATE 16*/||PINA.0==0&&PINA.1==0&&PINA.2==1&&PINA.3==1&&PINA.4==1&&PINA.5==1&&PINA.6==0/*STATE 17*/)        
+        if (PINA.0==1&&PINA.1==1&&PINA.2==1&&PINA.3==0&&PINA.4==1&&PINA.5==1&&PINA.6==1||PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0/*STATE 1*/||PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==1&&PINA.4==0&&PINA.5==0&&PINA.6==0/*STATE 2*/||PINA.0==1&&PINA.1==0&&PINA.2==0&&PINA.3==1&&PINA.4==0&&PINA.5==0&&PINA.6==0/*STATE 3*/||PINA.0==1&&PINA.1==1&&PINA.2==0&&PINA.3==1&&PINA.4==0&&PINA.5==0&&PINA.6==0/*STATE 4*/||PINA.0==1&&PINA.1==1&&PINA.2==1&&PINA.3==1&&PINA.4==0&&PINA.5==0&&PINA.6==0/*STATE 5*/||PINA.0==1&&PINA.1==1&&PINA.2==1&&PINA.3==1&&PINA.4==1&&PINA.5==0&&PINA.6==0/*STATE 6*/||PINA.0==1&&PINA.1==1&&PINA.2==1&&PINA.3==1&&PINA.4==1&&PINA.5==1&&PINA.6==0/*STATE 7*/||PINA.0==1&&PINA.1==1&&PINA.2==1&&PINA.3==1&&PINA.4==1&&PINA.5==1&&PINA.6==1/*STATE 8*/||PINA.0==1&&PINA.1==0&&PINA.2==1&&PINA.3==1&&PINA.4==0&&PINA.5==0&&PINA.6==0/*STATE 9*/||PINA.0==0&&PINA.1==0&&PINA.2==1&&PINA.3==1&&PINA.4==0&&PINA.5==0&&PINA.6==0/*STATE 10*/||PINA.0==0&&PINA.1==0&&PINA.2==1&&PINA.3==1&&PINA.4==1&&PINA.5==0&&PINA.6==0/*STATE 11*/||PINA.0==0&&PINA.1==0&&PINA.2==1&&PINA.3==1&&PINA.4==1&&PINA.5==1&&PINA.6==0/*STATE 12*/||PINA.0==0&&PINA.1==1&&PINA.2==1&&PINA.3==1&&PINA.4==1&&PINA.5==1&&PINA.6==0/*STATE 13*/||PINA.0==0&&PINA.1==0&&PINA.2==1&&PINA.3==1&&PINA.4==1&&PINA.5==1&&PINA.6==0/*STATE 14*/||PINA.0==1&&PINA.1==0&&PINA.2==1&&PINA.3==0&&PINA.4==1&&PINA.5==0&&PINA.6==1/*STATE 15*/||PINA.0==1&&PINA.1==0&&PINA.2==1&&PINA.3==1&&PINA.4==1&&PINA.5==0&&PINA.6==1/*STATE 16*/||PINA.0==0&&PINA.1==0&&PINA.2==1&&PINA.3==1&&PINA.4==1&&PINA.5==1&&PINA.6==0/*STATE 17*/)        
         {
             PORTC.0=1;
             PORTC.1=0;
@@ -71,32 +72,46 @@ void main(void)
             PORTC.2=0;
             PORTC.3=0;
         }
-        if (PINA.0==1&&PINA.1==1&&PINA.2==1&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // R
+        if (PINA.0==1&&PINA.1==1&&PINA.2==1&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // Left Station
         {
             PORTC.0=0;
             PORTC.1=0;
             PORTC.2=1;
             PORTC.3=0;
         }
-        if (PINA.0==1&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // R
+        if (PINA.0==1&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // Left Station
         {
             PORTC.0=0;
             PORTC.1=1;
             PORTC.2=1;
             PORTC.3=0;
         }
-        if (PINA.0==0&&PINA.1==1&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // R
+        if (PINA.0==0&&PINA.1==1&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // Left Station
         {
             PORTC.0=0;
             PORTC.1=0;
             PORTC.2=1;
             PORTC.3=0;
         }
-        if (PINA.0==0&&PINA.1==0&&PINA.2==1&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // R
+        if (PINA.0==0&&PINA.1==0&&PINA.2==1&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // Left Station
         {
             PORTC.0=0;
             PORTC.1=0;
             PORTC.2=1;
+            PORTC.3=0;
+        }
+        if (PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==1&&PINA.6==0) // Left Station
+        {
+            PORTC.0=1;
+            PORTC.1=0;
+            PORTC.2=0;
+            PORTC.3=0;
+        }
+        if (PINB.0==1||PINB.1==1)
+        {
+            PORTC.0=0;
+            PORTC.1=0;
+            PORTC.2=0;
             PORTC.3=0;
         }
     }
