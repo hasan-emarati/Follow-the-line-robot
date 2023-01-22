@@ -1599,19 +1599,19 @@ _0x4D:
 ; 0000 0047             PORTC.2=0;
 ; 0000 0048             PORTC.3=0;
 ; 0000 0049         }
-; 0000 004A         if (PINA.0==1&&PINA.1==1&&PINA.2==1&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // Left Station
+; 0000 004A         if (PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==1&&PINA.6==0)// R
 _0x4B:
-	SBIS 0x19,0
+	SBIC 0x19,0
 	RJMP _0x57
-	SBIS 0x19,1
+	SBIC 0x19,1
 	RJMP _0x57
-	SBIS 0x19,2
+	SBIC 0x19,2
 	RJMP _0x57
 	SBIC 0x19,3
 	RJMP _0x57
 	SBIC 0x19,4
 	RJMP _0x57
-	SBIC 0x19,5
+	SBIS 0x19,5
 	RJMP _0x57
 	SBIS 0x19,6
 	RJMP _0x58
@@ -1619,15 +1619,15 @@ _0x57:
 	RJMP _0x56
 _0x58:
 ; 0000 004B         {
-; 0000 004C             PORTC.0=0;
-	RCALL SUBOPT_0x1
+; 0000 004C             PORTC.0=1;
+	RCALL SUBOPT_0x0
 ; 0000 004D             PORTC.1=0;
-; 0000 004E             PORTC.2=1;
+; 0000 004E             PORTC.2=0;
 ; 0000 004F             PORTC.3=0;
 ; 0000 0050         }
-; 0000 0051         if (PINA.0==1&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // Left Station
+; 0000 0051         if (PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==1&&PINA.5==0&&PINA.6==1)// R
 _0x56:
-	SBIS 0x19,0
+	SBIC 0x19,0
 	RJMP _0x62
 	SBIC 0x19,1
 	RJMP _0x62
@@ -1635,30 +1635,27 @@ _0x56:
 	RJMP _0x62
 	SBIC 0x19,3
 	RJMP _0x62
-	SBIC 0x19,4
+	SBIS 0x19,4
 	RJMP _0x62
 	SBIC 0x19,5
 	RJMP _0x62
-	SBIS 0x19,6
+	SBIC 0x19,6
 	RJMP _0x63
 _0x62:
 	RJMP _0x61
 _0x63:
 ; 0000 0052         {
-; 0000 0053             PORTC.0=0;
-	CBI  0x15,0
-; 0000 0054             PORTC.1=1;
-	SBI  0x15,1
-; 0000 0055             PORTC.2=1;
-	SBI  0x15,2
+; 0000 0053             PORTC.0=1;
+	RCALL SUBOPT_0x0
+; 0000 0054             PORTC.1=0;
+; 0000 0055             PORTC.2=0;
 ; 0000 0056             PORTC.3=0;
-	CBI  0x15,3
 ; 0000 0057         }
-; 0000 0058         if (PINA.0==0&&PINA.1==1&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // Left Station
+; 0000 0058         if (PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==1&&PINA.6==1)// R
 _0x61:
 	SBIC 0x19,0
 	RJMP _0x6D
-	SBIS 0x19,1
+	SBIC 0x19,1
 	RJMP _0x6D
 	SBIC 0x19,2
 	RJMP _0x6D
@@ -1666,33 +1663,33 @@ _0x61:
 	RJMP _0x6D
 	SBIC 0x19,4
 	RJMP _0x6D
-	SBIC 0x19,5
+	SBIS 0x19,5
 	RJMP _0x6D
-	SBIS 0x19,6
+	SBIC 0x19,6
 	RJMP _0x6E
 _0x6D:
 	RJMP _0x6C
 _0x6E:
 ; 0000 0059         {
-; 0000 005A             PORTC.0=0;
-	RCALL SUBOPT_0x1
+; 0000 005A             PORTC.0=1;
+	RCALL SUBOPT_0x0
 ; 0000 005B             PORTC.1=0;
-; 0000 005C             PORTC.2=1;
+; 0000 005C             PORTC.2=0;
 ; 0000 005D             PORTC.3=0;
 ; 0000 005E         }
-; 0000 005F         if (PINA.0==0&&PINA.1==0&&PINA.2==1&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // Left Station
+; 0000 005F         if (PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==1&&PINA.5==1&&PINA.6==0)// R
 _0x6C:
 	SBIC 0x19,0
 	RJMP _0x78
 	SBIC 0x19,1
 	RJMP _0x78
-	SBIS 0x19,2
+	SBIC 0x19,2
 	RJMP _0x78
 	SBIC 0x19,3
 	RJMP _0x78
-	SBIC 0x19,4
+	SBIS 0x19,4
 	RJMP _0x78
-	SBIC 0x19,5
+	SBIS 0x19,5
 	RJMP _0x78
 	SBIS 0x19,6
 	RJMP _0x79
@@ -1700,25 +1697,25 @@ _0x78:
 	RJMP _0x77
 _0x79:
 ; 0000 0060         {
-; 0000 0061             PORTC.0=0;
-	RCALL SUBOPT_0x1
+; 0000 0061             PORTC.0=1;
+	RCALL SUBOPT_0x0
 ; 0000 0062             PORTC.1=0;
-; 0000 0063             PORTC.2=1;
+; 0000 0063             PORTC.2=0;
 ; 0000 0064             PORTC.3=0;
 ; 0000 0065         }
-; 0000 0066         if (PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==1&&PINA.6==0) // Left Station
+; 0000 0066         if (PINA.0==1&&PINA.1==1&&PINA.2==1&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // Left Station
 _0x77:
-	SBIC 0x19,0
+	SBIS 0x19,0
 	RJMP _0x83
-	SBIC 0x19,1
+	SBIS 0x19,1
 	RJMP _0x83
-	SBIC 0x19,2
+	SBIS 0x19,2
 	RJMP _0x83
 	SBIC 0x19,3
 	RJMP _0x83
 	SBIC 0x19,4
 	RJMP _0x83
-	SBIS 0x19,5
+	SBIC 0x19,5
 	RJMP _0x83
 	SBIS 0x19,6
 	RJMP _0x84
@@ -1726,39 +1723,198 @@ _0x83:
 	RJMP _0x82
 _0x84:
 ; 0000 0067         {
-; 0000 0068             PORTC.0=1;
-	RCALL SUBOPT_0x0
+; 0000 0068             PORTC.0=0;
+	RCALL SUBOPT_0x1
 ; 0000 0069             PORTC.1=0;
-; 0000 006A             PORTC.2=0;
+; 0000 006A             PORTC.2=1;
 ; 0000 006B             PORTC.3=0;
 ; 0000 006C         }
-; 0000 006D         if (PINB.0==1||PINB.1==1)
+; 0000 006D         if (PINA.0==1&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // Left Station
 _0x82:
-	SBIC 0x16,0
+	SBIS 0x19,0
 	RJMP _0x8E
-	SBIS 0x16,1
-	RJMP _0x8D
+	SBIC 0x19,1
+	RJMP _0x8E
+	SBIC 0x19,2
+	RJMP _0x8E
+	SBIC 0x19,3
+	RJMP _0x8E
+	SBIC 0x19,4
+	RJMP _0x8E
+	SBIC 0x19,5
+	RJMP _0x8E
+	SBIS 0x19,6
+	RJMP _0x8F
 _0x8E:
+	RJMP _0x8D
+_0x8F:
 ; 0000 006E         {
 ; 0000 006F             PORTC.0=0;
 	CBI  0x15,0
-; 0000 0070             PORTC.1=0;
-	CBI  0x15,1
-; 0000 0071             PORTC.2=0;
-	CBI  0x15,2
+; 0000 0070             PORTC.1=1;
+	SBI  0x15,1
+; 0000 0071             PORTC.2=1;
+	SBI  0x15,2
 ; 0000 0072             PORTC.3=0;
 	CBI  0x15,3
 ; 0000 0073         }
-; 0000 0074     }
+; 0000 0074         if (PINA.0==0&&PINA.1==1&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // Left Station
 _0x8D:
-	RJMP _0x3
-; 0000 0075 }
-_0x98:
+	SBIC 0x19,0
+	RJMP _0x99
+	SBIS 0x19,1
+	RJMP _0x99
+	SBIC 0x19,2
+	RJMP _0x99
+	SBIC 0x19,3
+	RJMP _0x99
+	SBIC 0x19,4
+	RJMP _0x99
+	SBIC 0x19,5
+	RJMP _0x99
+	SBIS 0x19,6
+	RJMP _0x9A
+_0x99:
 	RJMP _0x98
+_0x9A:
+; 0000 0075         {
+; 0000 0076             PORTC.0=0;
+	RCALL SUBOPT_0x1
+; 0000 0077             PORTC.1=0;
+; 0000 0078             PORTC.2=1;
+; 0000 0079             PORTC.3=0;
+; 0000 007A         }
+; 0000 007B         if (PINA.0==0&&PINA.1==0&&PINA.2==1&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // Left Station
+_0x98:
+	SBIC 0x19,0
+	RJMP _0xA4
+	SBIC 0x19,1
+	RJMP _0xA4
+	SBIS 0x19,2
+	RJMP _0xA4
+	SBIC 0x19,3
+	RJMP _0xA4
+	SBIC 0x19,4
+	RJMP _0xA4
+	SBIC 0x19,5
+	RJMP _0xA4
+	SBIS 0x19,6
+	RJMP _0xA5
+_0xA4:
+	RJMP _0xA3
+_0xA5:
+; 0000 007C         {
+; 0000 007D             PORTC.0=0;
+	RCALL SUBOPT_0x1
+; 0000 007E             PORTC.1=0;
+; 0000 007F             PORTC.2=1;
+; 0000 0080             PORTC.3=0;
+; 0000 0081         }
+; 0000 0082         if (PINA.0==1&&PINA.1==0&&PINA.2==1&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // Left Station
+_0xA3:
+	SBIS 0x19,0
+	RJMP _0xAF
+	SBIC 0x19,1
+	RJMP _0xAF
+	SBIS 0x19,2
+	RJMP _0xAF
+	SBIC 0x19,3
+	RJMP _0xAF
+	SBIC 0x19,4
+	RJMP _0xAF
+	SBIC 0x19,5
+	RJMP _0xAF
+	SBIS 0x19,6
+	RJMP _0xB0
+_0xAF:
+	RJMP _0xAE
+_0xB0:
+; 0000 0083         {
+; 0000 0084             PORTC.0=0;
+	RCALL SUBOPT_0x1
+; 0000 0085             PORTC.1=0;
+; 0000 0086             PORTC.2=1;
+; 0000 0087             PORTC.3=0;
+; 0000 0088         }
+; 0000 0089         if (PINA.0==1&&PINA.1==1&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // Left Station
+_0xAE:
+	SBIS 0x19,0
+	RJMP _0xBA
+	SBIS 0x19,1
+	RJMP _0xBA
+	SBIC 0x19,2
+	RJMP _0xBA
+	SBIC 0x19,3
+	RJMP _0xBA
+	SBIC 0x19,4
+	RJMP _0xBA
+	SBIC 0x19,5
+	RJMP _0xBA
+	SBIS 0x19,6
+	RJMP _0xBB
+_0xBA:
+	RJMP _0xB9
+_0xBB:
+; 0000 008A         {
+; 0000 008B             PORTC.0=0;
+	RCALL SUBOPT_0x1
+; 0000 008C             PORTC.1=0;
+; 0000 008D             PORTC.2=1;
+; 0000 008E             PORTC.3=0;
+; 0000 008F         }
+; 0000 0090         if (PINA.0==0&&PINA.1==1&&PINA.2==1&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // Left Station
+_0xB9:
+	SBIC 0x19,0
+	RJMP _0xC5
+	SBIS 0x19,1
+	RJMP _0xC5
+	SBIS 0x19,2
+	RJMP _0xC5
+	SBIC 0x19,3
+	RJMP _0xC5
+	SBIC 0x19,4
+	RJMP _0xC5
+	SBIC 0x19,5
+	RJMP _0xC5
+	SBIS 0x19,6
+	RJMP _0xC6
+_0xC5:
+	RJMP _0xC4
+_0xC6:
+; 0000 0091         {
+; 0000 0092             PORTC.0=0;
+	RCALL SUBOPT_0x1
+; 0000 0093             PORTC.1=0;
+; 0000 0094             PORTC.2=1;
+; 0000 0095             PORTC.3=0;
+; 0000 0096         }
+; 0000 0097         if (PINB.0==1||PINB.1==1)
+_0xC4:
+	SBIC 0x16,0
+	RJMP _0xD0
+	SBIS 0x16,1
+	RJMP _0xCF
+_0xD0:
+; 0000 0098         {
+; 0000 0099             PORTC.0=0;
+	CBI  0x15,0
+; 0000 009A             PORTC.1=0;
+	CBI  0x15,1
+; 0000 009B             PORTC.2=0;
+	CBI  0x15,2
+; 0000 009C             PORTC.3=0;
+	CBI  0x15,3
+; 0000 009D         }
+; 0000 009E     }
+_0xCF:
+	RJMP _0x3
+; 0000 009F }
+_0xDA:
+	RJMP _0xDA
 ; .FEND
 
 	.CSEG
-;OPTIMIZER ADDED SUBROUTINE, CALLED 3 TIMES, CODE SIZE REDUCTION:1 WORDS
+;OPTIMIZER ADDED SUBROUTINE, CALLED 6 TIMES, CODE SIZE REDUCTION:7 WORDS
 SUBOPT_0x0:
 	SBI  0x15,0
 	CBI  0x15,1
@@ -1766,7 +1922,7 @@ SUBOPT_0x0:
 	CBI  0x15,3
 	RET
 
-;OPTIMIZER ADDED SUBROUTINE, CALLED 3 TIMES, CODE SIZE REDUCTION:1 WORDS
+;OPTIMIZER ADDED SUBROUTINE, CALLED 6 TIMES, CODE SIZE REDUCTION:7 WORDS
 SUBOPT_0x1:
 	CBI  0x15,0
 	CBI  0x15,1
