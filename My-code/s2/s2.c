@@ -16,24 +16,15 @@ Data Stack size         : 256
 *******************************************************/
 
 #include <mega16.h>
-
-#ifndef input_all_sensor
-#define input_all_sensor (0<<DDA6) | (0<<DDA5) | (0<<DDA4) | (0<<DDA3) | (0<<DDA2) | (0<<DDA1) | (0<<DDA0)
-#endif // !input_all_sensor
-
-#ifndef Left_sensors
-#define Left_sensors = (1<<PINA2) | (1<<PINA1) | (1<<PINA0)
-#endif // !Left_sensors
-
-#ifndef Center_sensors
-#define Center_sensors = (1<<PINA3)
-#endif // !Center_sensors
-
-#ifndef Right_sensors
-#define Right_sensors = (1<<PINA6) | (1<<PINA5) | (1<<PINA4)
-#endif // !Right_sensors
+#include <delay.h>
 
 
+
+void Front_M (void);
+void Left_M (void);
+//void Fast_Left_M (void);
+//void Right_M (void);
+//void Fast_Right_M (void);
 
 void main(void)
 {
@@ -104,6 +95,24 @@ void main(void)
 
       while (1)
       {
-            
+            Front_M();
+            delay_ms(100);
+            Left_M();
       }
+}
+
+void Front_M (void)
+{
+int Left_Motor_OCR = OC0;
+int Right_Motor_OCR = OC2;
+      PORTC=(0<<PORTC3) | (1<<PORTC2) | (0<<PORTC1) | (1<<PORTC0); 
+      OCR0=255;
+      OCR2=255;    
+}
+
+void Left_M (void)
+{
+      PORTC=(0<<PORTC3) | (0<<PORTC2) | (0<<PORTC1) | (1<<PORTC0); 
+      OCR0=255;
+      OCR2=0;         
 }

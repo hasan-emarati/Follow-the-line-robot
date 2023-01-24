@@ -1,7 +1,6 @@
-VERSION:3 SOURCE_TIMESTAMP:56389B7C
+VERSION:3 SOURCE_TIMESTAMP:5638A5FA
 NODE:I LEVEL:0 LINE:18 "C:\cvavr\inc\mega16.h"
-NODE:M LEVEL:0 LINE:21 "input_all_sensor"
-NODE:M LEVEL:0 LINE:25 "Left_sensors"
-NODE:M LEVEL:0 LINE:29 "Center_sensors"
-NODE:M LEVEL:0 LINE:33 "Right_sensors"
-NODE:F LEVEL:0 LINE:38 "main(void)"
+NODE:I LEVEL:0 LINE:19 "C:\cvavr\inc\delay.h"
+NODE:F LEVEL:0 LINE:29 "main(void)"
+NODE:F LEVEL:0 LINE:104 "Front_M(void)"
+NODE:F LEVEL:0 LINE:113 "Left_M(void)"
