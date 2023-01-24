@@ -17,10 +17,22 @@ Data Stack size         : 256
 
 #include <mega16.h>
 
+#ifndef input_all_sensor
 #define input_all_sensor (0<<DDA6) | (0<<DDA5) | (0<<DDA4) | (0<<DDA3) | (0<<DDA2) | (0<<DDA1) | (0<<DDA0)
+#endif // !input_all_sensor
+
+#ifndef Left_sensors
 #define Left_sensors = (1<<PINA2) | (1<<PINA1) | (1<<PINA0)
+#endif // !Left_sensors
+
+#ifndef Center_sensors
 #define Center_sensors = (1<<PINA3)
+#endif // !Center_sensors
+
+#ifndef Right_sensors
 #define Right_sensors = (1<<PINA6) | (1<<PINA5) | (1<<PINA4)
+#endif // !Right_sensors
+
 
 
 void main(void)

@@ -1192,122 +1192,132 @@ __CLEAR_SRAM:
 	.SET power_ctrl_reg=mcucr
 	#endif
 ;
-;#define input_all_sensor PINA
-;#define Left_sensors = (1<<PINA0) | (1<<PINA1) | (1<<PINA2)
-;#define Right_sensors = (1<<PINA4) | (1<<PINA5) | (1<<PINA6)
+;#ifndef input_all_sensor
+;#define input_all_sensor (0<<DDA6) | (0<<DDA5) | (0<<DDA4) | (0<<DDA3) | (0<<DDA2) | (0<<DDA1) | (0<<DDA0)
+;#endif // !input_all_sensor
+;
+;#ifndef Left_sensors
+;#define Left_sensors = (1<<PINA2) | (1<<PINA1) | (1<<PINA0)
+;#endif // !Left_sensors
+;
+;#ifndef Center_sensors
 ;#define Center_sensors = (1<<PINA3)
+;#endif // !Center_sensors
+;
+;#ifndef Right_sensors
+;#define Right_sensors = (1<<PINA6) | (1<<PINA5) | (1<<PINA4)
+;#endif // !Right_sensors
+;
+;
 ;
 ;void main(void)
-; 0000 001A {
+; 0000 0027 {
 
 	.CSEG
 _main:
 ; .FSTART _main
-; 0000 001B       // Declare your local variables here
-; 0000 001C 
-; 0000 001D       // Input/Output Ports initialization
-; 0000 001E       // Port A initialization
-; 0000 001F       // Function: Bit7=In Bit6=In Bit5=In Bit4=In Bit3=In Bit2=In Bit1=In Bit0=In
-; 0000 0020       DDRA=(0<<DDA7) | (0<<DDA6) | (0<<DDA5) | (0<<DDA4) | (0<<DDA3) | (0<<DDA2) | (0<<DDA1) | (0<<DDA0);
+; 0000 0028       // Declare your local variables here
+; 0000 0029 
+; 0000 002A       // Input/Output Ports initialization
+; 0000 002B       // Port A initialization
+; 0000 002C       // Function: Bit7=In Bit6=In Bit5=In Bit4=In Bit3=In Bit2=In Bit1=In Bit0=In
+; 0000 002D       DDRA=(0<<DDA7) | (0<<DDA6) | (0<<DDA5) | (0<<DDA4) | (0<<DDA3) | (0<<DDA2) | (0<<DDA1) | (0<<DDA0);
 	LDI  R30,LOW(0)
 	OUT  0x1A,R30
-; 0000 0021       // State: Bit7=T Bit6=T Bit5=T Bit4=T Bit3=T Bit2=T Bit1=T Bit0=T
-; 0000 0022 
-; 0000 0023 
-; 0000 0024 
-; 0000 0025       // Port B initialization
-; 0000 0026       // Function: Bit7=In Bit6=In Bit5=In Bit4=In Bit3=Out Bit2=In Bit1=In Bit0=In
-; 0000 0027       DDRB=(0<<DDB7) | (0<<DDB6) | (0<<DDB5) | (0<<DDB4) | (1<<DDB3) | (0<<DDB2) | (0<<DDB1) | (0<<DDB0);
+; 0000 002E       // State: Bit7=T Bit6=T Bit5=T Bit4=T Bit3=T Bit2=T Bit1=T Bit0=T
+; 0000 002F 
+; 0000 0030 
+; 0000 0031 
+; 0000 0032       // Port B initialization
+; 0000 0033       // Function: Bit7=In Bit6=In Bit5=In Bit4=In Bit3=Out Bit2=In Bit1=In Bit0=In
+; 0000 0034       DDRB=(0<<DDB7) | (0<<DDB6) | (0<<DDB5) | (0<<DDB4) | (1<<DDB3) | (0<<DDB2) | (0<<DDB1) | (0<<DDB0);
 	LDI  R30,LOW(8)
 	OUT  0x17,R30
-; 0000 0028       // State: Bit7=T Bit6=T Bit5=T Bit4=T Bit3=0 Bit2=T Bit1=T Bit0=T
-; 0000 0029       PORTB=(0<<PORTB7) | (0<<PORTB6) | (0<<PORTB5) | (0<<PORTB4) | (0<<PORTB3) | (0<<PORTB2) | (0<<PORTB1) | (0<<PORTB0 ...
+; 0000 0035       // State: Bit7=T Bit6=T Bit5=T Bit4=T Bit3=0 Bit2=T Bit1=T Bit0=T
+; 0000 0036       PORTB=(0<<PORTB7) | (0<<PORTB6) | (0<<PORTB5) | (0<<PORTB4) | (0<<PORTB3) | (0<<PORTB2) | (0<<PORTB1) | (0<<PORTB0 ...
 	LDI  R30,LOW(0)
 	OUT  0x18,R30
-; 0000 002A 
-; 0000 002B       // Port C initialization
-; 0000 002C       // Function: Bit7=In Bit6=In Bit5=In Bit4=In Bit3=Out Bit2=Out Bit1=Out Bit0=Out
-; 0000 002D       DDRC=(0<<DDC7) | (0<<DDC6) | (0<<DDC5) | (0<<DDC4) | (1<<DDC3) | (1<<DDC2) | (1<<DDC1) | (1<<DDC0);
+; 0000 0037 
+; 0000 0038       // Port C initialization
+; 0000 0039       // Function: Bit7=In Bit6=In Bit5=In Bit4=In Bit3=Out Bit2=Out Bit1=Out Bit0=Out
+; 0000 003A       DDRC=(0<<DDC7) | (0<<DDC6) | (0<<DDC5) | (0<<DDC4) | (1<<DDC3) | (1<<DDC2) | (1<<DDC1) | (1<<DDC0);
 	LDI  R30,LOW(15)
 	OUT  0x14,R30
-; 0000 002E       // State: Bit7=T Bit6=T Bit5=T Bit4=T Bit3=0 Bit2=0 Bit1=0 Bit0=0
-; 0000 002F       PORTC=(0<<PORTC7) | (0<<PORTC6) | (0<<PORTC5) | (0<<PORTC4) | (0<<PORTC3) | (0<<PORTC2) | (0<<PORTC1) | (0<<PORTC0 ...
+; 0000 003B       // State: Bit7=T Bit6=T Bit5=T Bit4=T Bit3=0 Bit2=0 Bit1=0 Bit0=0
+; 0000 003C       PORTC=(0<<PORTC7) | (0<<PORTC6) | (0<<PORTC5) | (0<<PORTC4) | (0<<PORTC3) | (0<<PORTC2) | (0<<PORTC1) | (0<<PORTC0 ...
 	LDI  R30,LOW(0)
 	OUT  0x15,R30
-; 0000 0030 
-; 0000 0031       // Port D initialization
-; 0000 0032       // Function: Bit7=Out Bit6=In Bit5=In Bit4=In Bit3=In Bit2=In Bit1=In Bit0=In
-; 0000 0033       DDRD=(1<<DDD7) | (0<<DDD6) | (0<<DDD5) | (0<<DDD4) | (0<<DDD3) | (0<<DDD2) | (0<<DDD1) | (0<<DDD0);
+; 0000 003D 
+; 0000 003E       // Port D initialization
+; 0000 003F       // Function: Bit7=Out Bit6=In Bit5=In Bit4=In Bit3=In Bit2=In Bit1=In Bit0=In
+; 0000 0040       DDRD=(1<<DDD7) | (0<<DDD6) | (0<<DDD5) | (0<<DDD4) | (0<<DDD3) | (0<<DDD2) | (0<<DDD1) | (0<<DDD0);
 	LDI  R30,LOW(128)
 	OUT  0x11,R30
-; 0000 0034       // State: Bit7=0 Bit6=T Bit5=T Bit4=T Bit3=T Bit2=T Bit1=T Bit0=T
-; 0000 0035       PORTD=(0<<PORTD7) | (0<<PORTD6) | (0<<PORTD5) | (0<<PORTD4) | (0<<PORTD3) | (0<<PORTD2) | (0<<PORTD1) | (0<<PORTD0 ...
+; 0000 0041       // State: Bit7=0 Bit6=T Bit5=T Bit4=T Bit3=T Bit2=T Bit1=T Bit0=T
+; 0000 0042       PORTD=(0<<PORTD7) | (0<<PORTD6) | (0<<PORTD5) | (0<<PORTD4) | (0<<PORTD3) | (0<<PORTD2) | (0<<PORTD1) | (0<<PORTD0 ...
 	LDI  R30,LOW(0)
 	OUT  0x12,R30
-; 0000 0036 
-; 0000 0037       // Timer/Counter 0 initialization
-; 0000 0038       // Clock source: System Clock
-; 0000 0039       // Clock value: 8000.000 kHz
-; 0000 003A       // Mode: Fast PWM top=0xFF
-; 0000 003B       // OC0 output: Non-Inverted PWM
-; 0000 003C       // Timer Period: 0.032 ms
-; 0000 003D       // Output Pulse(s):
-; 0000 003E       // OC0 Period: 0.032 ms Width: 0 us
-; 0000 003F       TCCR0=(1<<WGM00) | (1<<COM01) | (0<<COM00) | (1<<WGM01) | (0<<CS02) | (0<<CS01) | (1<<CS00);
+; 0000 0043 
+; 0000 0044       // Timer/Counter 0 initialization
+; 0000 0045       // Clock source: System Clock
+; 0000 0046       // Clock value: 8000.000 kHz
+; 0000 0047       // Mode: Fast PWM top=0xFF
+; 0000 0048       // OC0 output: Non-Inverted PWM
+; 0000 0049       // Timer Period: 0.032 ms
+; 0000 004A       // Output Pulse(s):
+; 0000 004B       // OC0 Period: 0.032 ms Width: 0 us
+; 0000 004C       TCCR0=(1<<WGM00) | (1<<COM01) | (0<<COM00) | (1<<WGM01) | (0<<CS02) | (0<<CS01) | (1<<CS00);
 	LDI  R30,LOW(105)
 	OUT  0x33,R30
-; 0000 0040       TCNT0=0x00;
+; 0000 004D       TCNT0=0x00;
 	LDI  R30,LOW(0)
 	OUT  0x32,R30
-; 0000 0041       OCR0=0x00;
+; 0000 004E       OCR0=0x00;
 	OUT  0x3C,R30
-; 0000 0042 
-; 0000 0043       // Timer/Counter 2 initialization
-; 0000 0044       // Clock source: System Clock
-; 0000 0045       // Clock value: 8000.000 kHz
-; 0000 0046       // Mode: Fast PWM top=0xFF
-; 0000 0047       // OC2 output: Non-Inverted PWM
-; 0000 0048       // Timer Period: 0.032 ms
-; 0000 0049       // Output Pulse(s):
-; 0000 004A       // OC2 Period: 0.032 ms Width: 0 us
-; 0000 004B       ASSR=0<<AS2;
+; 0000 004F 
+; 0000 0050       // Timer/Counter 2 initialization
+; 0000 0051       // Clock source: System Clock
+; 0000 0052       // Clock value: 8000.000 kHz
+; 0000 0053       // Mode: Fast PWM top=0xFF
+; 0000 0054       // OC2 output: Non-Inverted PWM
+; 0000 0055       // Timer Period: 0.032 ms
+; 0000 0056       // Output Pulse(s):
+; 0000 0057       // OC2 Period: 0.032 ms Width: 0 us
+; 0000 0058       ASSR=0<<AS2;
 	OUT  0x22,R30
-; 0000 004C       TCCR2=(1<<PWM2) | (1<<COM21) | (0<<COM20) | (1<<CTC2) | (0<<CS22) | (0<<CS21) | (1<<CS20);
+; 0000 0059       TCCR2=(1<<PWM2) | (1<<COM21) | (0<<COM20) | (1<<CTC2) | (0<<CS22) | (0<<CS21) | (1<<CS20);
 	LDI  R30,LOW(105)
 	OUT  0x25,R30
-; 0000 004D       TCNT2=0x00;
+; 0000 005A       TCNT2=0x00;
 	LDI  R30,LOW(0)
 	OUT  0x24,R30
-; 0000 004E       OCR2=0x00;
+; 0000 005B       OCR2=0x00;
 	OUT  0x23,R30
-; 0000 004F 
-; 0000 0050       // Timer(s)/Counter(s) Interrupt(s) initialization
-; 0000 0051       TIMSK=(0<<OCIE2) | (0<<TOIE2) | (0<<TICIE1) | (0<<OCIE1A) | (0<<OCIE1B) | (0<<TOIE1) | (0<<OCIE0) | (0<<TOIE0);
+; 0000 005C 
+; 0000 005D       // Timer(s)/Counter(s) Interrupt(s) initialization
+; 0000 005E       TIMSK=(0<<OCIE2) | (0<<TOIE2) | (0<<TICIE1) | (0<<OCIE1A) | (0<<OCIE1B) | (0<<TOIE1) | (0<<OCIE0) | (0<<TOIE0);
 	OUT  0x39,R30
-; 0000 0052 
-; 0000 0053       // Analog Comparator initialization
-; 0000 0054       // Analog Comparator: Off
-; 0000 0055       // The Analog Comparator's positive input is
-; 0000 0056       // connected to the AIN0 pin
-; 0000 0057       // The Analog Comparator's negative input is
-; 0000 0058       // connected to the AIN1 pin
-; 0000 0059       ACSR=(1<<ACD) | (0<<ACBG) | (0<<ACO) | (0<<ACI) | (0<<ACIE) | (0<<ACIC) | (0<<ACIS1) | (0<<ACIS0);
+; 0000 005F 
+; 0000 0060       // Analog Comparator initialization
+; 0000 0061       // Analog Comparator: Off
+; 0000 0062       // The Analog Comparator's positive input is
+; 0000 0063       // connected to the AIN0 pin
+; 0000 0064       // The Analog Comparator's negative input is
+; 0000 0065       // connected to the AIN1 pin
+; 0000 0066       ACSR=(1<<ACD) | (0<<ACBG) | (0<<ACO) | (0<<ACI) | (0<<ACIE) | (0<<ACIC) | (0<<ACIS1) | (0<<ACIS0);
 	LDI  R30,LOW(128)
 	OUT  0x8,R30
-; 0000 005A       SFIOR=(0<<ACME);
+; 0000 0067       SFIOR=(0<<ACME);
 	LDI  R30,LOW(0)
 	OUT  0x30,R30
-; 0000 005B 
-; 0000 005C 
-; 0000 005D 
-; 0000 005E 
-; 0000 005F       while (1)
+; 0000 0068 
+; 0000 0069       while (1)
 _0x3:
-; 0000 0060       {
-; 0000 0061 
-; 0000 0062       }
+; 0000 006A       {
+; 0000 006B 
+; 0000 006C       }
 	RJMP _0x3
-; 0000 0063 }
+; 0000 006D }
 _0x6:
 	RJMP _0x6
 ; .FEND
