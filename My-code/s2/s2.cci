@@ -1,0 +1,7 @@
+VERSION:3 SOURCE_TIMESTAMP:563899E9
+NODE:I LEVEL:0 LINE:18 "C:\cvavr\inc\mega16.h"
+NODE:M LEVEL:0 LINE:20 "input_all_sensor"
+NODE:M LEVEL:0 LINE:21 "Left_sensors"
+NODE:M LEVEL:0 LINE:22 "Right_sensors"
+NODE:M LEVEL:0 LINE:23 "Center_sensors"
+NODE:F LEVEL:0 LINE:25 "main(void)"
