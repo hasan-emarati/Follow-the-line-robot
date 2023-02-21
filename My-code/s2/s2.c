@@ -18,8 +18,6 @@ Data Stack size         : 256
 #include <mega16.h>
 #include <delay.h>
 
-
-
 void Front_M (void);
 void Left_M (void);
 //void Fast_Left_M (void);
@@ -103,8 +101,6 @@ void main(void)
 
 void Front_M (void)
 {
-int Left_Motor_OCR = OC0;
-int Right_Motor_OCR = OC2;
       PORTC=(0<<PORTC3) | (1<<PORTC2) | (0<<PORTC1) | (1<<PORTC0); 
       OCR0=255;
       OCR2=255;    
