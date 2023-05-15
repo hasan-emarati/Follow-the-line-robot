@@ -25,7 +25,7 @@ void main(void)
     DDRA=(0<<DDA7) | (0<<DDA6) | (0<<DDA5) | (0<<DDA4) | (0<<DDA3) | (0<<DDA2) | (0<<DDA1) | (0<<DDA0);
     // Port B initialization
     // Function: Bit7=In Bit6=In Bit5=In Bit4=In Bit3=In Bit2=In Bit1=In Bit0=In 
-    DDRB=(0<<DDB7) | (0<<DDB6) | (0<<DDB5) | (0<<DDB4) | (0<<DDB3) | (0<<DDB2) | (0<<DDB1) | (0<<DDB0);
+    DDRB=(1<<DDB7) | (1<<DDB6) | (1<<DDB5) | (1<<DDB4) | (1<<DDB3) | (0<<DDB2) | (0<<DDB1) | (0<<DDB0);
     // State: Bit7=T Bit6=T Bit5=T Bit4=T Bit3=T Bit2=T Bit1=T Bit0=T 
     PORTB=(0<<PORTB7) | (0<<PORTB6) | (0<<PORTB5) | (0<<PORTB4) | (1<<PORTB3) | (0<<PORTB2) | (0<<PORTB1) | (0<<PORTB0);
     
@@ -45,115 +45,115 @@ void main(void)
     {
         if (PINA.0==1&&PINA.1==1&&PINA.2==1&&PINA.3==0&&PINA.4==1&&PINA.5==1&&PINA.6==1||PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0/*STATE 1*/||PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==1&&PINA.4==0&&PINA.5==0&&PINA.6==0/*STATE 2*/||PINA.0==1&&PINA.1==0&&PINA.2==0&&PINA.3==1&&PINA.4==0&&PINA.5==0&&PINA.6==0/*STATE 3*/||PINA.0==1&&PINA.1==1&&PINA.2==0&&PINA.3==1&&PINA.4==0&&PINA.5==0&&PINA.6==0/*STATE 4*/||PINA.0==1&&PINA.1==1&&PINA.2==1&&PINA.3==1&&PINA.4==0&&PINA.5==0&&PINA.6==0/*STATE 5*/||PINA.0==1&&PINA.1==1&&PINA.2==1&&PINA.3==1&&PINA.4==1&&PINA.5==0&&PINA.6==0/*STATE 6*/||PINA.0==1&&PINA.1==1&&PINA.2==1&&PINA.3==1&&PINA.4==1&&PINA.5==1&&PINA.6==0/*STATE 7*/||PINA.0==1&&PINA.1==1&&PINA.2==1&&PINA.3==1&&PINA.4==1&&PINA.5==1&&PINA.6==1/*STATE 8*/||PINA.0==1&&PINA.1==0&&PINA.2==1&&PINA.3==1&&PINA.4==0&&PINA.5==0&&PINA.6==0/*STATE 9*/||PINA.0==0&&PINA.1==0&&PINA.2==1&&PINA.3==1&&PINA.4==0&&PINA.5==0&&PINA.6==0/*STATE 10*/||PINA.0==0&&PINA.1==0&&PINA.2==1&&PINA.3==1&&PINA.4==1&&PINA.5==0&&PINA.6==0/*STATE 11*/||PINA.0==0&&PINA.1==0&&PINA.2==1&&PINA.3==1&&PINA.4==1&&PINA.5==1&&PINA.6==0/*STATE 12*/||PINA.0==0&&PINA.1==1&&PINA.2==1&&PINA.3==1&&PINA.4==1&&PINA.5==1&&PINA.6==0/*STATE 13*/||PINA.0==0&&PINA.1==0&&PINA.2==1&&PINA.3==1&&PINA.4==1&&PINA.5==1&&PINA.6==0/*STATE 14*/||PINA.0==1&&PINA.1==0&&PINA.2==1&&PINA.3==0&&PINA.4==1&&PINA.5==0&&PINA.6==1/*STATE 15*/||PINA.0==1&&PINA.1==0&&PINA.2==1&&PINA.3==1&&PINA.4==1&&PINA.5==0&&PINA.6==1/*STATE 16*/||PINA.0==0&&PINA.1==0&&PINA.2==1&&PINA.3==1&&PINA.4==1&&PINA.5==1&&PINA.6==0/*STATE 17*/)        
         {
-            PORTC.0=1;
-            PORTC.1=0;
-            PORTC.2=1;
-            PORTC.3=0;
+            PORTB.4=1;
+            PORTB.5=0;
+            PORTB.6=1;
+            PORTB.7=0;
         } 
         if (PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==1&&PINA.5==1&&PINA.6==1) // R
         {
-            PORTC.0=1;
-            PORTC.1=0;
-            PORTC.2=0;
-            PORTC.3=0;
+            PORTB.4=1;
+            PORTB.5=0;
+            PORTB.6=0;
+            PORTB.7=0;
         }
         if (PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==1) // R
         {
-            PORTC.0=1;
-            PORTC.1=0;
-            PORTC.2=0;
-            PORTC.3=1;
+            PORTB.4=1;
+            PORTB.5=0;
+            PORTB.6=0;
+            PORTB.7=1;
         }
         if (PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==1&&PINA.5==0&&PINA.6==0) // R
         {
-            PORTC.0=1;
-            PORTC.1=0;
-            PORTC.2=0;
-            PORTC.3=0;
+            PORTB.4=1;
+            PORTB.5=0;
+            PORTB.6=0;
+            PORTB.7=0;
         }
         if (PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==1&&PINA.6==0)// R
         {
-            PORTC.0=1;
-            PORTC.1=0;
-            PORTC.2=0;
-            PORTC.3=0;   
+            PORTB.4=1;
+            PORTB.5=0;
+            PORTB.6=0;
+            PORTB.7=0;   
         }
         if (PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==1&&PINA.5==0&&PINA.6==1)// R
         {
-            PORTC.0=1;
-            PORTC.1=0;
-            PORTC.2=0;
-            PORTC.3=0;   
+            PORTB.4=1;
+            PORTB.5=0;
+            PORTB.6=0;
+            PORTB.7=0;   
         }
         if (PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==1&&PINA.6==1)// R
         {
-            PORTC.0=1;
-            PORTC.1=0;
-            PORTC.2=0;
-            PORTC.3=0;   
+            PORTB.4=1;
+            PORTB.5=0;
+            PORTB.6=0;
+            PORTB.7=0;   
         }
         if (PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==1&&PINA.5==1&&PINA.6==0)// R
         {
-            PORTC.0=1;
-            PORTC.1=0;
-            PORTC.2=0;
-            PORTC.3=0;   
+            PORTB.4=1;
+            PORTB.5=0;
+            PORTB.6=0;
+            PORTB.7=0;   
         }
         if (PINA.0==1&&PINA.1==1&&PINA.2==1&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // Left Station
         {
-            PORTC.0=0;
-            PORTC.1=0;
-            PORTC.2=1;
-            PORTC.3=0;
+            PORTB.4=0;
+            PORTB.5=0;
+            PORTB.6=1;
+            PORTB.7=0;
         }
         if (PINA.0==1&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // Left Station
         {
-            PORTC.0=0;
-            PORTC.1=1;
-            PORTC.2=1;
-            PORTC.3=0;
+            PORTB.4=0;
+            PORTB.5=1;
+            PORTB.6=1;
+            PORTB.7=0;
         }
         if (PINA.0==0&&PINA.1==1&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // Left Station
         {
-            PORTC.0=0;
-            PORTC.1=0;
-            PORTC.2=1;
-            PORTC.3=0;
+            PORTB.4=0;
+            PORTB.5=0;
+            PORTB.6=1;
+            PORTB.7=0;
         }
         if (PINA.0==0&&PINA.1==0&&PINA.2==1&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // Left Station
         {
-            PORTC.0=0;
-            PORTC.1=0;
-            PORTC.2=1;
-            PORTC.3=0;
+            PORTB.4=0;
+            PORTB.5=0;
+            PORTB.6=1;
+            PORTB.7=0;
         }
         if (PINA.0==1&&PINA.1==0&&PINA.2==1&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // Left Station
         {
-            PORTC.0=0;
-            PORTC.1=0;
-            PORTC.2=1;
-            PORTC.3=0;
+            PORTB.4=0;
+            PORTB.5=0;
+            PORTB.6=1;
+            PORTB.7=0;
         }
         if (PINA.0==1&&PINA.1==1&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // Left Station
         {
-            PORTC.0=0;
-            PORTC.1=0;
-            PORTC.2=1;
-            PORTC.3=0;
+            PORTB.4=0;
+            PORTB.5=0;
+            PORTB.6=1;
+            PORTB.7=0;
         }
         if (PINA.0==0&&PINA.1==1&&PINA.2==1&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // Left Station
         {
-            PORTC.0=0;
-            PORTC.1=0;
-            PORTC.2=1;
-            PORTC.3=0;
+            PORTB.4=0;
+            PORTB.5=0;
+            PORTB.6=1;
+            PORTB.7=0;
         }
         if (PINB.0==1||PINB.1==1)
         {
-            PORTC.0=0;
-            PORTC.1=0;
-            PORTC.2=0;
-            PORTC.3=0;
+            PORTB.4=0;
+            PORTB.5=0;
+            PORTB.6=0;
+            PORTB.7=0;
         }
     }
 }

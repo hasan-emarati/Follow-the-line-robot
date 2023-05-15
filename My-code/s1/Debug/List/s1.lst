@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.1.30  G:\meriikh\Follow the line\Follow-the-line-robot\My-code\Debug\List\s1.asm Mon Jan 23 20:01:48 2023
+AVRASM ver. 2.1.30  G:\meriikh\Follow-the-line-robot\My-code\s1\Debug\List\s1.asm Fri May 12 22:09:17 2023
 
                  
                  
@@ -1210,729 +1210,730 @@ AVRASM ver. 2.1.30  G:\meriikh\Follow the line\Follow-the-line-robot\My-code\Deb
 000046 bbea      	OUT  0x1A,R30
                  ; 0000 001A     // Port B initialization
                  ; 0000 001B     // Function: Bit7=In Bit6=In Bit5=In Bit4=In Bit3=In Bit2=In Bit1=In Bit0=In
-                 ; 0000 001C     DDRB=(0<<DDB7) | (0<<DDB6) | (0<<DDB5) | (0<<DDB4) | (0<<DDB3) | (0<<DDB2) | (0<<DDB1) | (0<<DDB0);
-000047 bbe7      	OUT  0x17,R30
+                 ; 0000 001C     DDRB=(1<<DDB7) | (1<<DDB6) | (1<<DDB5) | (1<<DDB4) | (1<<DDB3) | (0<<DDB2) | (0<<DDB1) | (0<<DDB0);
+000047 efe8      	LDI  R30,LOW(248)
+000048 bbe7      	OUT  0x17,R30
                  ; 0000 001D     // State: Bit7=T Bit6=T Bit5=T Bit4=T Bit3=T Bit2=T Bit1=T Bit0=T
                  ; 0000 001E     PORTB=(0<<PORTB7) | (0<<PORTB6) | (0<<PORTB5) | (0<<PORTB4) | (1<<PORTB3) | (0<<PORTB2) | (0<<PORTB1) | (0<<PORTB0);
-000048 e0e8      	LDI  R30,LOW(8)
-000049 bbe8      	OUT  0x18,R30
+000049 e0e8      	LDI  R30,LOW(8)
+00004a bbe8      	OUT  0x18,R30
                  ; 0000 001F 
                  ; 0000 0020     // Port C initialization
                  ; 0000 0021     // Function: Bit7=In Bit6=In Bit5=In Bit4=In Bit3=Out Bit2=Out Bit1=Out Bit0=Out
                  ; 0000 0022     DDRC=(0<<DDC7) | (0<<DDC6) | (0<<DDC5) | (0<<DDC4) | (1<<DDC3) | (1<<DDC2) | (1<<DDC1) | (1<<DDC0);
-00004a e0ef      	LDI  R30,LOW(15)
-00004b bbe4      	OUT  0x14,R30
+00004b e0ef      	LDI  R30,LOW(15)
+00004c bbe4      	OUT  0x14,R30
                  ; 0000 0023     // State: Bit7=T Bit6=T Bit5=T Bit4=T Bit3=0 Bit2=0 Bit1=0 Bit0=0
                  ; 0000 0024     PORTC=(0<<PORTC7) | (0<<PORTC6) | (0<<PORTC5) | (0<<PORTC4) | (0<<PORTC3) | (0<<PORTC2) | (0<<PORTC1) | (0<<PORTC0);
-00004c e0e0      	LDI  R30,LOW(0)
-00004d bbe5      	OUT  0x15,R30
+00004d e0e0      	LDI  R30,LOW(0)
+00004e bbe5      	OUT  0x15,R30
                  ; 0000 0025 
                  ; 0000 0026     // Port D initialization
                  ; 0000 0027     // Function: Bit7=In Bit6=In Bit5=In Bit4=In Bit3=In Bit2=In Bit1=In Bit0=In
                  ; 0000 0028     DDRD=(0<<DDD7) | (0<<DDD6) | (0<<DDD5) | (0<<DDD4) | (0<<DDD3) | (0<<DDD2) | (0<<DDD1) | (0<<DDD0);
-00004e bbe1      	OUT  0x11,R30
+00004f bbe1      	OUT  0x11,R30
                  ; 0000 0029     // State: Bit7=T Bit6=T Bit5=T Bit4=T Bit3=T Bit2=T Bit1=T Bit0=T
                  ; 0000 002A     PORTD=(1<<PORTD7) | (0<<PORTD6) | (0<<PORTD5) | (0<<PORTD4) | (0<<PORTD3) | (0<<PORTD2) | (0<<PORTD1) | (0<<PORTD0);
-00004f e8e0      	LDI  R30,LOW(128)
-000050 bbe2      	OUT  0x12,R30
+000050 e8e0      	LDI  R30,LOW(128)
+000051 bbe2      	OUT  0x12,R30
                  ; 0000 002B 
                  ; 0000 002C     while (1)
                  _0x3:
                  ; 0000 002D     {
                  ; 0000 002E         if (PINA.0==1&&PINA.1==1&&PINA.2==1&&PINA.3==0&&PINA.4==1&&PINA.5==1&&PINA.6==1||PINA.0==0&&PINA.1==0&&PINA.2==0 ...
-000051 9bc8      	SBIS 0x19,0
-000052 c00c      	RJMP _0x7
-000053 9bc9      	SBIS 0x19,1
-000054 c00a      	RJMP _0x7
-000055 9bca      	SBIS 0x19,2
-000056 c008      	RJMP _0x7
-000057 99cb      	SBIC 0x19,3
-000058 c006      	RJMP _0x7
-000059 9bcc      	SBIS 0x19,4
-00005a c004      	RJMP _0x7
-00005b 9bcd      	SBIS 0x19,5
-00005c c002      	RJMP _0x7
-00005d 99ce      	SBIC 0x19,6
-00005e c0ef      	RJMP _0x9
+000052 9bc8      	SBIS 0x19,0
+000053 c00c      	RJMP _0x7
+000054 9bc9      	SBIS 0x19,1
+000055 c00a      	RJMP _0x7
+000056 9bca      	SBIS 0x19,2
+000057 c008      	RJMP _0x7
+000058 99cb      	SBIC 0x19,3
+000059 c006      	RJMP _0x7
+00005a 9bcc      	SBIS 0x19,4
+00005b c004      	RJMP _0x7
+00005c 9bcd      	SBIS 0x19,5
+00005d c002      	RJMP _0x7
+00005e 99ce      	SBIC 0x19,6
+00005f c0ef      	RJMP _0x9
                  _0x7:
-00005f 99c8      	SBIC 0x19,0
-000060 c00c      	RJMP _0xA
-000061 99c9      	SBIC 0x19,1
-000062 c00a      	RJMP _0xA
-000063 99ca      	SBIC 0x19,2
-000064 c008      	RJMP _0xA
-000065 99cb      	SBIC 0x19,3
-000066 c006      	RJMP _0xA
-000067 99cc      	SBIC 0x19,4
-000068 c004      	RJMP _0xA
-000069 99cd      	SBIC 0x19,5
-00006a c002      	RJMP _0xA
-00006b 9bce      	SBIS 0x19,6
-00006c c0e1      	RJMP _0x9
+000060 99c8      	SBIC 0x19,0
+000061 c00c      	RJMP _0xA
+000062 99c9      	SBIC 0x19,1
+000063 c00a      	RJMP _0xA
+000064 99ca      	SBIC 0x19,2
+000065 c008      	RJMP _0xA
+000066 99cb      	SBIC 0x19,3
+000067 c006      	RJMP _0xA
+000068 99cc      	SBIC 0x19,4
+000069 c004      	RJMP _0xA
+00006a 99cd      	SBIC 0x19,5
+00006b c002      	RJMP _0xA
+00006c 9bce      	SBIS 0x19,6
+00006d c0e1      	RJMP _0x9
                  _0xA:
-00006d 99c8      	SBIC 0x19,0
-00006e c00c      	RJMP _0xC
-00006f 99c9      	SBIC 0x19,1
-000070 c00a      	RJMP _0xC
-000071 99ca      	SBIC 0x19,2
-000072 c008      	RJMP _0xC
-000073 9bcb      	SBIS 0x19,3
-000074 c006      	RJMP _0xC
-000075 99cc      	SBIC 0x19,4
-000076 c004      	RJMP _0xC
-000077 99cd      	SBIC 0x19,5
-000078 c002      	RJMP _0xC
-000079 9bce      	SBIS 0x19,6
-00007a c0d3      	RJMP _0x9
+00006e 99c8      	SBIC 0x19,0
+00006f c00c      	RJMP _0xC
+000070 99c9      	SBIC 0x19,1
+000071 c00a      	RJMP _0xC
+000072 99ca      	SBIC 0x19,2
+000073 c008      	RJMP _0xC
+000074 9bcb      	SBIS 0x19,3
+000075 c006      	RJMP _0xC
+000076 99cc      	SBIC 0x19,4
+000077 c004      	RJMP _0xC
+000078 99cd      	SBIC 0x19,5
+000079 c002      	RJMP _0xC
+00007a 9bce      	SBIS 0x19,6
+00007b c0d3      	RJMP _0x9
                  _0xC:
-00007b 9bc8      	SBIS 0x19,0
-00007c c00c      	RJMP _0xE
-00007d 99c9      	SBIC 0x19,1
-00007e c00a      	RJMP _0xE
-00007f 99ca      	SBIC 0x19,2
-000080 c008      	RJMP _0xE
-000081 9bcb      	SBIS 0x19,3
-000082 c006      	RJMP _0xE
-000083 99cc      	SBIC 0x19,4
-000084 c004      	RJMP _0xE
-000085 99cd      	SBIC 0x19,5
-000086 c002      	RJMP _0xE
-000087 9bce      	SBIS 0x19,6
-000088 c0c5      	RJMP _0x9
+00007c 9bc8      	SBIS 0x19,0
+00007d c00c      	RJMP _0xE
+00007e 99c9      	SBIC 0x19,1
+00007f c00a      	RJMP _0xE
+000080 99ca      	SBIC 0x19,2
+000081 c008      	RJMP _0xE
+000082 9bcb      	SBIS 0x19,3
+000083 c006      	RJMP _0xE
+000084 99cc      	SBIC 0x19,4
+000085 c004      	RJMP _0xE
+000086 99cd      	SBIC 0x19,5
+000087 c002      	RJMP _0xE
+000088 9bce      	SBIS 0x19,6
+000089 c0c5      	RJMP _0x9
                  _0xE:
-000089 9bc8      	SBIS 0x19,0
-00008a c00c      	RJMP _0x10
-00008b 9bc9      	SBIS 0x19,1
-00008c c00a      	RJMP _0x10
-00008d 99ca      	SBIC 0x19,2
-00008e c008      	RJMP _0x10
-00008f 9bcb      	SBIS 0x19,3
-000090 c006      	RJMP _0x10
-000091 99cc      	SBIC 0x19,4
-000092 c004      	RJMP _0x10
-000093 99cd      	SBIC 0x19,5
-000094 c002      	RJMP _0x10
-000095 9bce      	SBIS 0x19,6
-000096 c0b7      	RJMP _0x9
+00008a 9bc8      	SBIS 0x19,0
+00008b c00c      	RJMP _0x10
+00008c 9bc9      	SBIS 0x19,1
+00008d c00a      	RJMP _0x10
+00008e 99ca      	SBIC 0x19,2
+00008f c008      	RJMP _0x10
+000090 9bcb      	SBIS 0x19,3
+000091 c006      	RJMP _0x10
+000092 99cc      	SBIC 0x19,4
+000093 c004      	RJMP _0x10
+000094 99cd      	SBIC 0x19,5
+000095 c002      	RJMP _0x10
+000096 9bce      	SBIS 0x19,6
+000097 c0b7      	RJMP _0x9
                  _0x10:
-000097 9bc8      	SBIS 0x19,0
-000098 c00c      	RJMP _0x12
-000099 9bc9      	SBIS 0x19,1
-00009a c00a      	RJMP _0x12
-00009b 9bca      	SBIS 0x19,2
-00009c c008      	RJMP _0x12
-00009d 9bcb      	SBIS 0x19,3
-00009e c006      	RJMP _0x12
-00009f 99cc      	SBIC 0x19,4
-0000a0 c004      	RJMP _0x12
-0000a1 99cd      	SBIC 0x19,5
-0000a2 c002      	RJMP _0x12
-0000a3 9bce      	SBIS 0x19,6
-0000a4 c0a9      	RJMP _0x9
+000098 9bc8      	SBIS 0x19,0
+000099 c00c      	RJMP _0x12
+00009a 9bc9      	SBIS 0x19,1
+00009b c00a      	RJMP _0x12
+00009c 9bca      	SBIS 0x19,2
+00009d c008      	RJMP _0x12
+00009e 9bcb      	SBIS 0x19,3
+00009f c006      	RJMP _0x12
+0000a0 99cc      	SBIC 0x19,4
+0000a1 c004      	RJMP _0x12
+0000a2 99cd      	SBIC 0x19,5
+0000a3 c002      	RJMP _0x12
+0000a4 9bce      	SBIS 0x19,6
+0000a5 c0a9      	RJMP _0x9
                  _0x12:
-0000a5 9bc8      	SBIS 0x19,0
-0000a6 c00c      	RJMP _0x14
-0000a7 9bc9      	SBIS 0x19,1
-0000a8 c00a      	RJMP _0x14
-0000a9 9bca      	SBIS 0x19,2
-0000aa c008      	RJMP _0x14
-0000ab 9bcb      	SBIS 0x19,3
-0000ac c006      	RJMP _0x14
-0000ad 9bcc      	SBIS 0x19,4
-0000ae c004      	RJMP _0x14
-0000af 99cd      	SBIC 0x19,5
-0000b0 c002      	RJMP _0x14
-0000b1 9bce      	SBIS 0x19,6
-0000b2 c09b      	RJMP _0x9
+0000a6 9bc8      	SBIS 0x19,0
+0000a7 c00c      	RJMP _0x14
+0000a8 9bc9      	SBIS 0x19,1
+0000a9 c00a      	RJMP _0x14
+0000aa 9bca      	SBIS 0x19,2
+0000ab c008      	RJMP _0x14
+0000ac 9bcb      	SBIS 0x19,3
+0000ad c006      	RJMP _0x14
+0000ae 9bcc      	SBIS 0x19,4
+0000af c004      	RJMP _0x14
+0000b0 99cd      	SBIC 0x19,5
+0000b1 c002      	RJMP _0x14
+0000b2 9bce      	SBIS 0x19,6
+0000b3 c09b      	RJMP _0x9
                  _0x14:
-0000b3 9bc8      	SBIS 0x19,0
-0000b4 c00c      	RJMP _0x16
-0000b5 9bc9      	SBIS 0x19,1
-0000b6 c00a      	RJMP _0x16
-0000b7 9bca      	SBIS 0x19,2
-0000b8 c008      	RJMP _0x16
-0000b9 9bcb      	SBIS 0x19,3
-0000ba c006      	RJMP _0x16
-0000bb 9bcc      	SBIS 0x19,4
-0000bc c004      	RJMP _0x16
-0000bd 9bcd      	SBIS 0x19,5
-0000be c002      	RJMP _0x16
-0000bf 9bce      	SBIS 0x19,6
-0000c0 c08d      	RJMP _0x9
+0000b4 9bc8      	SBIS 0x19,0
+0000b5 c00c      	RJMP _0x16
+0000b6 9bc9      	SBIS 0x19,1
+0000b7 c00a      	RJMP _0x16
+0000b8 9bca      	SBIS 0x19,2
+0000b9 c008      	RJMP _0x16
+0000ba 9bcb      	SBIS 0x19,3
+0000bb c006      	RJMP _0x16
+0000bc 9bcc      	SBIS 0x19,4
+0000bd c004      	RJMP _0x16
+0000be 9bcd      	SBIS 0x19,5
+0000bf c002      	RJMP _0x16
+0000c0 9bce      	SBIS 0x19,6
+0000c1 c08d      	RJMP _0x9
                  _0x16:
-0000c1 9bc8      	SBIS 0x19,0
-0000c2 c00c      	RJMP _0x18
-0000c3 9bc9      	SBIS 0x19,1
-0000c4 c00a      	RJMP _0x18
-0000c5 9bca      	SBIS 0x19,2
-0000c6 c008      	RJMP _0x18
-0000c7 9bcb      	SBIS 0x19,3
-0000c8 c006      	RJMP _0x18
-0000c9 9bcc      	SBIS 0x19,4
-0000ca c004      	RJMP _0x18
-0000cb 9bcd      	SBIS 0x19,5
-0000cc c002      	RJMP _0x18
-0000cd 99ce      	SBIC 0x19,6
-0000ce c07f      	RJMP _0x9
+0000c2 9bc8      	SBIS 0x19,0
+0000c3 c00c      	RJMP _0x18
+0000c4 9bc9      	SBIS 0x19,1
+0000c5 c00a      	RJMP _0x18
+0000c6 9bca      	SBIS 0x19,2
+0000c7 c008      	RJMP _0x18
+0000c8 9bcb      	SBIS 0x19,3
+0000c9 c006      	RJMP _0x18
+0000ca 9bcc      	SBIS 0x19,4
+0000cb c004      	RJMP _0x18
+0000cc 9bcd      	SBIS 0x19,5
+0000cd c002      	RJMP _0x18
+0000ce 99ce      	SBIC 0x19,6
+0000cf c07f      	RJMP _0x9
                  _0x18:
-0000cf 9bc8      	SBIS 0x19,0
-0000d0 c00c      	RJMP _0x1A
-0000d1 99c9      	SBIC 0x19,1
-0000d2 c00a      	RJMP _0x1A
-0000d3 9bca      	SBIS 0x19,2
-0000d4 c008      	RJMP _0x1A
-0000d5 9bcb      	SBIS 0x19,3
-0000d6 c006      	RJMP _0x1A
-0000d7 99cc      	SBIC 0x19,4
-0000d8 c004      	RJMP _0x1A
-0000d9 99cd      	SBIC 0x19,5
-0000da c002      	RJMP _0x1A
-0000db 9bce      	SBIS 0x19,6
-0000dc c071      	RJMP _0x9
+0000d0 9bc8      	SBIS 0x19,0
+0000d1 c00c      	RJMP _0x1A
+0000d2 99c9      	SBIC 0x19,1
+0000d3 c00a      	RJMP _0x1A
+0000d4 9bca      	SBIS 0x19,2
+0000d5 c008      	RJMP _0x1A
+0000d6 9bcb      	SBIS 0x19,3
+0000d7 c006      	RJMP _0x1A
+0000d8 99cc      	SBIC 0x19,4
+0000d9 c004      	RJMP _0x1A
+0000da 99cd      	SBIC 0x19,5
+0000db c002      	RJMP _0x1A
+0000dc 9bce      	SBIS 0x19,6
+0000dd c071      	RJMP _0x9
                  _0x1A:
-0000dd 99c8      	SBIC 0x19,0
-0000de c00c      	RJMP _0x1C
-0000df 99c9      	SBIC 0x19,1
-0000e0 c00a      	RJMP _0x1C
-0000e1 9bca      	SBIS 0x19,2
-0000e2 c008      	RJMP _0x1C
-0000e3 9bcb      	SBIS 0x19,3
-0000e4 c006      	RJMP _0x1C
-0000e5 99cc      	SBIC 0x19,4
-0000e6 c004      	RJMP _0x1C
-0000e7 99cd      	SBIC 0x19,5
-0000e8 c002      	RJMP _0x1C
-0000e9 9bce      	SBIS 0x19,6
-0000ea c063      	RJMP _0x9
+0000de 99c8      	SBIC 0x19,0
+0000df c00c      	RJMP _0x1C
+0000e0 99c9      	SBIC 0x19,1
+0000e1 c00a      	RJMP _0x1C
+0000e2 9bca      	SBIS 0x19,2
+0000e3 c008      	RJMP _0x1C
+0000e4 9bcb      	SBIS 0x19,3
+0000e5 c006      	RJMP _0x1C
+0000e6 99cc      	SBIC 0x19,4
+0000e7 c004      	RJMP _0x1C
+0000e8 99cd      	SBIC 0x19,5
+0000e9 c002      	RJMP _0x1C
+0000ea 9bce      	SBIS 0x19,6
+0000eb c063      	RJMP _0x9
                  _0x1C:
-0000eb 99c8      	SBIC 0x19,0
-0000ec c00c      	RJMP _0x1E
-0000ed 99c9      	SBIC 0x19,1
-0000ee c00a      	RJMP _0x1E
-0000ef 9bca      	SBIS 0x19,2
-0000f0 c008      	RJMP _0x1E
-0000f1 9bcb      	SBIS 0x19,3
-0000f2 c006      	RJMP _0x1E
-0000f3 9bcc      	SBIS 0x19,4
-0000f4 c004      	RJMP _0x1E
-0000f5 99cd      	SBIC 0x19,5
-0000f6 c002      	RJMP _0x1E
-0000f7 9bce      	SBIS 0x19,6
-0000f8 c055      	RJMP _0x9
+0000ec 99c8      	SBIC 0x19,0
+0000ed c00c      	RJMP _0x1E
+0000ee 99c9      	SBIC 0x19,1
+0000ef c00a      	RJMP _0x1E
+0000f0 9bca      	SBIS 0x19,2
+0000f1 c008      	RJMP _0x1E
+0000f2 9bcb      	SBIS 0x19,3
+0000f3 c006      	RJMP _0x1E
+0000f4 9bcc      	SBIS 0x19,4
+0000f5 c004      	RJMP _0x1E
+0000f6 99cd      	SBIC 0x19,5
+0000f7 c002      	RJMP _0x1E
+0000f8 9bce      	SBIS 0x19,6
+0000f9 c055      	RJMP _0x9
                  _0x1E:
-0000f9 99c8      	SBIC 0x19,0
-0000fa c00c      	RJMP _0x20
-0000fb 99c9      	SBIC 0x19,1
-0000fc c00a      	RJMP _0x20
-0000fd 9bca      	SBIS 0x19,2
-0000fe c008      	RJMP _0x20
-0000ff 9bcb      	SBIS 0x19,3
-000100 c006      	RJMP _0x20
-000101 9bcc      	SBIS 0x19,4
-000102 c004      	RJMP _0x20
-000103 9bcd      	SBIS 0x19,5
-000104 c002      	RJMP _0x20
-000105 9bce      	SBIS 0x19,6
-000106 c047      	RJMP _0x9
+0000fa 99c8      	SBIC 0x19,0
+0000fb c00c      	RJMP _0x20
+0000fc 99c9      	SBIC 0x19,1
+0000fd c00a      	RJMP _0x20
+0000fe 9bca      	SBIS 0x19,2
+0000ff c008      	RJMP _0x20
+000100 9bcb      	SBIS 0x19,3
+000101 c006      	RJMP _0x20
+000102 9bcc      	SBIS 0x19,4
+000103 c004      	RJMP _0x20
+000104 9bcd      	SBIS 0x19,5
+000105 c002      	RJMP _0x20
+000106 9bce      	SBIS 0x19,6
+000107 c047      	RJMP _0x9
                  _0x20:
-000107 99c8      	SBIC 0x19,0
-000108 c00c      	RJMP _0x22
-000109 9bc9      	SBIS 0x19,1
-00010a c00a      	RJMP _0x22
-00010b 9bca      	SBIS 0x19,2
-00010c c008      	RJMP _0x22
-00010d 9bcb      	SBIS 0x19,3
-00010e c006      	RJMP _0x22
-00010f 9bcc      	SBIS 0x19,4
-000110 c004      	RJMP _0x22
-000111 9bcd      	SBIS 0x19,5
-000112 c002      	RJMP _0x22
-000113 9bce      	SBIS 0x19,6
-000114 c039      	RJMP _0x9
+000108 99c8      	SBIC 0x19,0
+000109 c00c      	RJMP _0x22
+00010a 9bc9      	SBIS 0x19,1
+00010b c00a      	RJMP _0x22
+00010c 9bca      	SBIS 0x19,2
+00010d c008      	RJMP _0x22
+00010e 9bcb      	SBIS 0x19,3
+00010f c006      	RJMP _0x22
+000110 9bcc      	SBIS 0x19,4
+000111 c004      	RJMP _0x22
+000112 9bcd      	SBIS 0x19,5
+000113 c002      	RJMP _0x22
+000114 9bce      	SBIS 0x19,6
+000115 c039      	RJMP _0x9
                  _0x22:
-000115 99c8      	SBIC 0x19,0
-000116 c00c      	RJMP _0x24
-000117 99c9      	SBIC 0x19,1
-000118 c00a      	RJMP _0x24
-000119 9bca      	SBIS 0x19,2
-00011a c008      	RJMP _0x24
-00011b 9bcb      	SBIS 0x19,3
-00011c c006      	RJMP _0x24
-00011d 9bcc      	SBIS 0x19,4
-00011e c004      	RJMP _0x24
-00011f 9bcd      	SBIS 0x19,5
-000120 c002      	RJMP _0x24
-000121 9bce      	SBIS 0x19,6
-000122 c02b      	RJMP _0x9
+000116 99c8      	SBIC 0x19,0
+000117 c00c      	RJMP _0x24
+000118 99c9      	SBIC 0x19,1
+000119 c00a      	RJMP _0x24
+00011a 9bca      	SBIS 0x19,2
+00011b c008      	RJMP _0x24
+00011c 9bcb      	SBIS 0x19,3
+00011d c006      	RJMP _0x24
+00011e 9bcc      	SBIS 0x19,4
+00011f c004      	RJMP _0x24
+000120 9bcd      	SBIS 0x19,5
+000121 c002      	RJMP _0x24
+000122 9bce      	SBIS 0x19,6
+000123 c02b      	RJMP _0x9
                  _0x24:
-000123 9bc8      	SBIS 0x19,0
-000124 c00c      	RJMP _0x26
-000125 99c9      	SBIC 0x19,1
-000126 c00a      	RJMP _0x26
-000127 9bca      	SBIS 0x19,2
-000128 c008      	RJMP _0x26
-000129 99cb      	SBIC 0x19,3
-00012a c006      	RJMP _0x26
-00012b 9bcc      	SBIS 0x19,4
-00012c c004      	RJMP _0x26
-00012d 99cd      	SBIC 0x19,5
-00012e c002      	RJMP _0x26
-00012f 99ce      	SBIC 0x19,6
-000130 c01d      	RJMP _0x9
+000124 9bc8      	SBIS 0x19,0
+000125 c00c      	RJMP _0x26
+000126 99c9      	SBIC 0x19,1
+000127 c00a      	RJMP _0x26
+000128 9bca      	SBIS 0x19,2
+000129 c008      	RJMP _0x26
+00012a 99cb      	SBIC 0x19,3
+00012b c006      	RJMP _0x26
+00012c 9bcc      	SBIS 0x19,4
+00012d c004      	RJMP _0x26
+00012e 99cd      	SBIC 0x19,5
+00012f c002      	RJMP _0x26
+000130 99ce      	SBIC 0x19,6
+000131 c01d      	RJMP _0x9
                  _0x26:
-000131 9bc8      	SBIS 0x19,0
-000132 c00c      	RJMP _0x28
-000133 99c9      	SBIC 0x19,1
-000134 c00a      	RJMP _0x28
-000135 9bca      	SBIS 0x19,2
-000136 c008      	RJMP _0x28
-000137 9bcb      	SBIS 0x19,3
-000138 c006      	RJMP _0x28
-000139 9bcc      	SBIS 0x19,4
-00013a c004      	RJMP _0x28
-00013b 99cd      	SBIC 0x19,5
-00013c c002      	RJMP _0x28
-00013d 99ce      	SBIC 0x19,6
-00013e c00f      	RJMP _0x9
+000132 9bc8      	SBIS 0x19,0
+000133 c00c      	RJMP _0x28
+000134 99c9      	SBIC 0x19,1
+000135 c00a      	RJMP _0x28
+000136 9bca      	SBIS 0x19,2
+000137 c008      	RJMP _0x28
+000138 9bcb      	SBIS 0x19,3
+000139 c006      	RJMP _0x28
+00013a 9bcc      	SBIS 0x19,4
+00013b c004      	RJMP _0x28
+00013c 99cd      	SBIC 0x19,5
+00013d c002      	RJMP _0x28
+00013e 99ce      	SBIC 0x19,6
+00013f c00f      	RJMP _0x9
                  _0x28:
-00013f 99c8      	SBIC 0x19,0
-000140 c00c      	RJMP _0x2A
-000141 99c9      	SBIC 0x19,1
-000142 c00a      	RJMP _0x2A
-000143 9bca      	SBIS 0x19,2
-000144 c008      	RJMP _0x2A
-000145 9bcb      	SBIS 0x19,3
-000146 c006      	RJMP _0x2A
-000147 9bcc      	SBIS 0x19,4
-000148 c004      	RJMP _0x2A
-000149 9bcd      	SBIS 0x19,5
-00014a c002      	RJMP _0x2A
-00014b 9bce      	SBIS 0x19,6
-00014c c001      	RJMP _0x9
+000140 99c8      	SBIC 0x19,0
+000141 c00c      	RJMP _0x2A
+000142 99c9      	SBIC 0x19,1
+000143 c00a      	RJMP _0x2A
+000144 9bca      	SBIS 0x19,2
+000145 c008      	RJMP _0x2A
+000146 9bcb      	SBIS 0x19,3
+000147 c006      	RJMP _0x2A
+000148 9bcc      	SBIS 0x19,4
+000149 c004      	RJMP _0x2A
+00014a 9bcd      	SBIS 0x19,5
+00014b c002      	RJMP _0x2A
+00014c 9bce      	SBIS 0x19,6
+00014d c001      	RJMP _0x9
                  _0x2A:
-00014d c004      	RJMP _0x6
+00014e c004      	RJMP _0x6
                  _0x9:
                  ; 0000 002F         {
-                 ; 0000 0030             PORTC.0=1;
-00014e 9aa8      	SBI  0x15,0
-                 ; 0000 0031             PORTC.1=0;
-00014f 98a9      	CBI  0x15,1
-                 ; 0000 0032             PORTC.2=1;
-000150 9aaa      	SBI  0x15,2
-                 ; 0000 0033             PORTC.3=0;
-000151 98ab      	CBI  0x15,3
+                 ; 0000 0030             PORTB.4=1;
+00014f 9ac4      	SBI  0x18,4
+                 ; 0000 0031             PORTB.5=0;
+000150 98c5      	CBI  0x18,5
+                 ; 0000 0032             PORTB.6=1;
+000151 9ac6      	SBI  0x18,6
+                 ; 0000 0033             PORTB.7=0;
+000152 98c7      	CBI  0x18,7
                  ; 0000 0034         }
                  ; 0000 0035         if (PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==1&&PINA.5==1&&PINA.6==1) // R
                  _0x6:
-000152 99c8      	SBIC 0x19,0
-000153 c00c      	RJMP _0x36
-000154 99c9      	SBIC 0x19,1
-000155 c00a      	RJMP _0x36
-000156 99ca      	SBIC 0x19,2
-000157 c008      	RJMP _0x36
-000158 99cb      	SBIC 0x19,3
-000159 c006      	RJMP _0x36
-00015a 9bcc      	SBIS 0x19,4
-00015b c004      	RJMP _0x36
-00015c 9bcd      	SBIS 0x19,5
-00015d c002      	RJMP _0x36
-00015e 99ce      	SBIC 0x19,6
-00015f c001      	RJMP _0x37
+000153 99c8      	SBIC 0x19,0
+000154 c00c      	RJMP _0x36
+000155 99c9      	SBIC 0x19,1
+000156 c00a      	RJMP _0x36
+000157 99ca      	SBIC 0x19,2
+000158 c008      	RJMP _0x36
+000159 99cb      	SBIC 0x19,3
+00015a c006      	RJMP _0x36
+00015b 9bcc      	SBIS 0x19,4
+00015c c004      	RJMP _0x36
+00015d 9bcd      	SBIS 0x19,5
+00015e c002      	RJMP _0x36
+00015f 99ce      	SBIC 0x19,6
+000160 c001      	RJMP _0x37
                  _0x36:
-000160 c001      	RJMP _0x35
+000161 c001      	RJMP _0x35
                  _0x37:
                  ; 0000 0036         {
-                 ; 0000 0037             PORTC.0=1;
-000161 d0e0      	RCALL SUBOPT_0x0
-                 ; 0000 0038             PORTC.1=0;
-                 ; 0000 0039             PORTC.2=0;
-                 ; 0000 003A             PORTC.3=0;
+                 ; 0000 0037             PORTB.4=1;
+000162 d0e0      	RCALL SUBOPT_0x0
+                 ; 0000 0038             PORTB.5=0;
+                 ; 0000 0039             PORTB.6=0;
+                 ; 0000 003A             PORTB.7=0;
                  ; 0000 003B         }
                  ; 0000 003C         if (PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==1) // R
                  _0x35:
-000162 99c8      	SBIC 0x19,0
-000163 c00c      	RJMP _0x41
-000164 99c9      	SBIC 0x19,1
-000165 c00a      	RJMP _0x41
-000166 99ca      	SBIC 0x19,2
-000167 c008      	RJMP _0x41
-000168 99cb      	SBIC 0x19,3
-000169 c006      	RJMP _0x41
-00016a 99cc      	SBIC 0x19,4
-00016b c004      	RJMP _0x41
-00016c 99cd      	SBIC 0x19,5
-00016d c002      	RJMP _0x41
-00016e 99ce      	SBIC 0x19,6
-00016f c001      	RJMP _0x42
+000163 99c8      	SBIC 0x19,0
+000164 c00c      	RJMP _0x41
+000165 99c9      	SBIC 0x19,1
+000166 c00a      	RJMP _0x41
+000167 99ca      	SBIC 0x19,2
+000168 c008      	RJMP _0x41
+000169 99cb      	SBIC 0x19,3
+00016a c006      	RJMP _0x41
+00016b 99cc      	SBIC 0x19,4
+00016c c004      	RJMP _0x41
+00016d 99cd      	SBIC 0x19,5
+00016e c002      	RJMP _0x41
+00016f 99ce      	SBIC 0x19,6
+000170 c001      	RJMP _0x42
                  _0x41:
-000170 c004      	RJMP _0x40
+000171 c004      	RJMP _0x40
                  _0x42:
                  ; 0000 003D         {
-                 ; 0000 003E             PORTC.0=1;
-000171 9aa8      	SBI  0x15,0
-                 ; 0000 003F             PORTC.1=0;
-000172 98a9      	CBI  0x15,1
-                 ; 0000 0040             PORTC.2=0;
-000173 98aa      	CBI  0x15,2
-                 ; 0000 0041             PORTC.3=1;
-000174 9aab      	SBI  0x15,3
+                 ; 0000 003E             PORTB.4=1;
+000172 9ac4      	SBI  0x18,4
+                 ; 0000 003F             PORTB.5=0;
+000173 98c5      	CBI  0x18,5
+                 ; 0000 0040             PORTB.6=0;
+000174 98c6      	CBI  0x18,6
+                 ; 0000 0041             PORTB.7=1;
+000175 9ac7      	SBI  0x18,7
                  ; 0000 0042         }
                  ; 0000 0043         if (PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==1&&PINA.5==0&&PINA.6==0) // R
                  _0x40:
-000175 99c8      	SBIC 0x19,0
-000176 c00c      	RJMP _0x4C
-000177 99c9      	SBIC 0x19,1
-000178 c00a      	RJMP _0x4C
-000179 99ca      	SBIC 0x19,2
-00017a c008      	RJMP _0x4C
-00017b 99cb      	SBIC 0x19,3
-00017c c006      	RJMP _0x4C
-00017d 9bcc      	SBIS 0x19,4
-00017e c004      	RJMP _0x4C
-00017f 99cd      	SBIC 0x19,5
-000180 c002      	RJMP _0x4C
-000181 9bce      	SBIS 0x19,6
-000182 c001      	RJMP _0x4D
+000176 99c8      	SBIC 0x19,0
+000177 c00c      	RJMP _0x4C
+000178 99c9      	SBIC 0x19,1
+000179 c00a      	RJMP _0x4C
+00017a 99ca      	SBIC 0x19,2
+00017b c008      	RJMP _0x4C
+00017c 99cb      	SBIC 0x19,3
+00017d c006      	RJMP _0x4C
+00017e 9bcc      	SBIS 0x19,4
+00017f c004      	RJMP _0x4C
+000180 99cd      	SBIC 0x19,5
+000181 c002      	RJMP _0x4C
+000182 9bce      	SBIS 0x19,6
+000183 c001      	RJMP _0x4D
                  _0x4C:
-000183 c001      	RJMP _0x4B
+000184 c001      	RJMP _0x4B
                  _0x4D:
                  ; 0000 0044         {
-                 ; 0000 0045             PORTC.0=1;
-000184 d0bd      	RCALL SUBOPT_0x0
-                 ; 0000 0046             PORTC.1=0;
-                 ; 0000 0047             PORTC.2=0;
-                 ; 0000 0048             PORTC.3=0;
+                 ; 0000 0045             PORTB.4=1;
+000185 d0bd      	RCALL SUBOPT_0x0
+                 ; 0000 0046             PORTB.5=0;
+                 ; 0000 0047             PORTB.6=0;
+                 ; 0000 0048             PORTB.7=0;
                  ; 0000 0049         }
                  ; 0000 004A         if (PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==1&&PINA.6==0)// R
                  _0x4B:
-000185 99c8      	SBIC 0x19,0
-000186 c00c      	RJMP _0x57
-000187 99c9      	SBIC 0x19,1
-000188 c00a      	RJMP _0x57
-000189 99ca      	SBIC 0x19,2
-00018a c008      	RJMP _0x57
-00018b 99cb      	SBIC 0x19,3
-00018c c006      	RJMP _0x57
-00018d 99cc      	SBIC 0x19,4
-00018e c004      	RJMP _0x57
-00018f 9bcd      	SBIS 0x19,5
-000190 c002      	RJMP _0x57
-000191 9bce      	SBIS 0x19,6
-000192 c001      	RJMP _0x58
+000186 99c8      	SBIC 0x19,0
+000187 c00c      	RJMP _0x57
+000188 99c9      	SBIC 0x19,1
+000189 c00a      	RJMP _0x57
+00018a 99ca      	SBIC 0x19,2
+00018b c008      	RJMP _0x57
+00018c 99cb      	SBIC 0x19,3
+00018d c006      	RJMP _0x57
+00018e 99cc      	SBIC 0x19,4
+00018f c004      	RJMP _0x57
+000190 9bcd      	SBIS 0x19,5
+000191 c002      	RJMP _0x57
+000192 9bce      	SBIS 0x19,6
+000193 c001      	RJMP _0x58
                  _0x57:
-000193 c001      	RJMP _0x56
+000194 c001      	RJMP _0x56
                  _0x58:
                  ; 0000 004B         {
-                 ; 0000 004C             PORTC.0=1;
-000194 d0ad      	RCALL SUBOPT_0x0
-                 ; 0000 004D             PORTC.1=0;
-                 ; 0000 004E             PORTC.2=0;
-                 ; 0000 004F             PORTC.3=0;
+                 ; 0000 004C             PORTB.4=1;
+000195 d0ad      	RCALL SUBOPT_0x0
+                 ; 0000 004D             PORTB.5=0;
+                 ; 0000 004E             PORTB.6=0;
+                 ; 0000 004F             PORTB.7=0;
                  ; 0000 0050         }
                  ; 0000 0051         if (PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==1&&PINA.5==0&&PINA.6==1)// R
                  _0x56:
-000195 99c8      	SBIC 0x19,0
-000196 c00c      	RJMP _0x62
-000197 99c9      	SBIC 0x19,1
-000198 c00a      	RJMP _0x62
-000199 99ca      	SBIC 0x19,2
-00019a c008      	RJMP _0x62
-00019b 99cb      	SBIC 0x19,3
-00019c c006      	RJMP _0x62
-00019d 9bcc      	SBIS 0x19,4
-00019e c004      	RJMP _0x62
-00019f 99cd      	SBIC 0x19,5
-0001a0 c002      	RJMP _0x62
-0001a1 99ce      	SBIC 0x19,6
-0001a2 c001      	RJMP _0x63
+000196 99c8      	SBIC 0x19,0
+000197 c00c      	RJMP _0x62
+000198 99c9      	SBIC 0x19,1
+000199 c00a      	RJMP _0x62
+00019a 99ca      	SBIC 0x19,2
+00019b c008      	RJMP _0x62
+00019c 99cb      	SBIC 0x19,3
+00019d c006      	RJMP _0x62
+00019e 9bcc      	SBIS 0x19,4
+00019f c004      	RJMP _0x62
+0001a0 99cd      	SBIC 0x19,5
+0001a1 c002      	RJMP _0x62
+0001a2 99ce      	SBIC 0x19,6
+0001a3 c001      	RJMP _0x63
                  _0x62:
-0001a3 c001      	RJMP _0x61
+0001a4 c001      	RJMP _0x61
                  _0x63:
                  ; 0000 0052         {
-                 ; 0000 0053             PORTC.0=1;
-0001a4 d09d      	RCALL SUBOPT_0x0
-                 ; 0000 0054             PORTC.1=0;
-                 ; 0000 0055             PORTC.2=0;
-                 ; 0000 0056             PORTC.3=0;
+                 ; 0000 0053             PORTB.4=1;
+0001a5 d09d      	RCALL SUBOPT_0x0
+                 ; 0000 0054             PORTB.5=0;
+                 ; 0000 0055             PORTB.6=0;
+                 ; 0000 0056             PORTB.7=0;
                  ; 0000 0057         }
                  ; 0000 0058         if (PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==1&&PINA.6==1)// R
                  _0x61:
-0001a5 99c8      	SBIC 0x19,0
-0001a6 c00c      	RJMP _0x6D
-0001a7 99c9      	SBIC 0x19,1
-0001a8 c00a      	RJMP _0x6D
-0001a9 99ca      	SBIC 0x19,2
-0001aa c008      	RJMP _0x6D
-0001ab 99cb      	SBIC 0x19,3
-0001ac c006      	RJMP _0x6D
-0001ad 99cc      	SBIC 0x19,4
-0001ae c004      	RJMP _0x6D
-0001af 9bcd      	SBIS 0x19,5
-0001b0 c002      	RJMP _0x6D
-0001b1 99ce      	SBIC 0x19,6
-0001b2 c001      	RJMP _0x6E
+0001a6 99c8      	SBIC 0x19,0
+0001a7 c00c      	RJMP _0x6D
+0001a8 99c9      	SBIC 0x19,1
+0001a9 c00a      	RJMP _0x6D
+0001aa 99ca      	SBIC 0x19,2
+0001ab c008      	RJMP _0x6D
+0001ac 99cb      	SBIC 0x19,3
+0001ad c006      	RJMP _0x6D
+0001ae 99cc      	SBIC 0x19,4
+0001af c004      	RJMP _0x6D
+0001b0 9bcd      	SBIS 0x19,5
+0001b1 c002      	RJMP _0x6D
+0001b2 99ce      	SBIC 0x19,6
+0001b3 c001      	RJMP _0x6E
                  _0x6D:
-0001b3 c001      	RJMP _0x6C
+0001b4 c001      	RJMP _0x6C
                  _0x6E:
                  ; 0000 0059         {
-                 ; 0000 005A             PORTC.0=1;
-0001b4 d08d      	RCALL SUBOPT_0x0
-                 ; 0000 005B             PORTC.1=0;
-                 ; 0000 005C             PORTC.2=0;
-                 ; 0000 005D             PORTC.3=0;
+                 ; 0000 005A             PORTB.4=1;
+0001b5 d08d      	RCALL SUBOPT_0x0
+                 ; 0000 005B             PORTB.5=0;
+                 ; 0000 005C             PORTB.6=0;
+                 ; 0000 005D             PORTB.7=0;
                  ; 0000 005E         }
                  ; 0000 005F         if (PINA.0==0&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==1&&PINA.5==1&&PINA.6==0)// R
                  _0x6C:
-0001b5 99c8      	SBIC 0x19,0
-0001b6 c00c      	RJMP _0x78
-0001b7 99c9      	SBIC 0x19,1
-0001b8 c00a      	RJMP _0x78
-0001b9 99ca      	SBIC 0x19,2
-0001ba c008      	RJMP _0x78
-0001bb 99cb      	SBIC 0x19,3
-0001bc c006      	RJMP _0x78
-0001bd 9bcc      	SBIS 0x19,4
-0001be c004      	RJMP _0x78
-0001bf 9bcd      	SBIS 0x19,5
-0001c0 c002      	RJMP _0x78
-0001c1 9bce      	SBIS 0x19,6
-0001c2 c001      	RJMP _0x79
+0001b6 99c8      	SBIC 0x19,0
+0001b7 c00c      	RJMP _0x78
+0001b8 99c9      	SBIC 0x19,1
+0001b9 c00a      	RJMP _0x78
+0001ba 99ca      	SBIC 0x19,2
+0001bb c008      	RJMP _0x78
+0001bc 99cb      	SBIC 0x19,3
+0001bd c006      	RJMP _0x78
+0001be 9bcc      	SBIS 0x19,4
+0001bf c004      	RJMP _0x78
+0001c0 9bcd      	SBIS 0x19,5
+0001c1 c002      	RJMP _0x78
+0001c2 9bce      	SBIS 0x19,6
+0001c3 c001      	RJMP _0x79
                  _0x78:
-0001c3 c001      	RJMP _0x77
+0001c4 c001      	RJMP _0x77
                  _0x79:
                  ; 0000 0060         {
-                 ; 0000 0061             PORTC.0=1;
-0001c4 d07d      	RCALL SUBOPT_0x0
-                 ; 0000 0062             PORTC.1=0;
-                 ; 0000 0063             PORTC.2=0;
-                 ; 0000 0064             PORTC.3=0;
+                 ; 0000 0061             PORTB.4=1;
+0001c5 d07d      	RCALL SUBOPT_0x0
+                 ; 0000 0062             PORTB.5=0;
+                 ; 0000 0063             PORTB.6=0;
+                 ; 0000 0064             PORTB.7=0;
                  ; 0000 0065         }
                  ; 0000 0066         if (PINA.0==1&&PINA.1==1&&PINA.2==1&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // Left Station
                  _0x77:
-0001c5 9bc8      	SBIS 0x19,0
-0001c6 c00c      	RJMP _0x83
-0001c7 9bc9      	SBIS 0x19,1
-0001c8 c00a      	RJMP _0x83
-0001c9 9bca      	SBIS 0x19,2
-0001ca c008      	RJMP _0x83
-0001cb 99cb      	SBIC 0x19,3
-0001cc c006      	RJMP _0x83
-0001cd 99cc      	SBIC 0x19,4
-0001ce c004      	RJMP _0x83
-0001cf 99cd      	SBIC 0x19,5
-0001d0 c002      	RJMP _0x83
-0001d1 9bce      	SBIS 0x19,6
-0001d2 c001      	RJMP _0x84
+0001c6 9bc8      	SBIS 0x19,0
+0001c7 c00c      	RJMP _0x83
+0001c8 9bc9      	SBIS 0x19,1
+0001c9 c00a      	RJMP _0x83
+0001ca 9bca      	SBIS 0x19,2
+0001cb c008      	RJMP _0x83
+0001cc 99cb      	SBIC 0x19,3
+0001cd c006      	RJMP _0x83
+0001ce 99cc      	SBIC 0x19,4
+0001cf c004      	RJMP _0x83
+0001d0 99cd      	SBIC 0x19,5
+0001d1 c002      	RJMP _0x83
+0001d2 9bce      	SBIS 0x19,6
+0001d3 c001      	RJMP _0x84
                  _0x83:
-0001d3 c001      	RJMP _0x82
+0001d4 c001      	RJMP _0x82
                  _0x84:
                  ; 0000 0067         {
-                 ; 0000 0068             PORTC.0=0;
-0001d4 d072      	RCALL SUBOPT_0x1
-                 ; 0000 0069             PORTC.1=0;
-                 ; 0000 006A             PORTC.2=1;
-                 ; 0000 006B             PORTC.3=0;
+                 ; 0000 0068             PORTB.4=0;
+0001d5 d072      	RCALL SUBOPT_0x1
+                 ; 0000 0069             PORTB.5=0;
+                 ; 0000 006A             PORTB.6=1;
+                 ; 0000 006B             PORTB.7=0;
                  ; 0000 006C         }
                  ; 0000 006D         if (PINA.0==1&&PINA.1==0&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // Left Station
                  _0x82:
-0001d5 9bc8      	SBIS 0x19,0
-0001d6 c00c      	RJMP _0x8E
-0001d7 99c9      	SBIC 0x19,1
-0001d8 c00a      	RJMP _0x8E
-0001d9 99ca      	SBIC 0x19,2
-0001da c008      	RJMP _0x8E
-0001db 99cb      	SBIC 0x19,3
-0001dc c006      	RJMP _0x8E
-0001dd 99cc      	SBIC 0x19,4
-0001de c004      	RJMP _0x8E
-0001df 99cd      	SBIC 0x19,5
-0001e0 c002      	RJMP _0x8E
-0001e1 9bce      	SBIS 0x19,6
-0001e2 c001      	RJMP _0x8F
+0001d6 9bc8      	SBIS 0x19,0
+0001d7 c00c      	RJMP _0x8E
+0001d8 99c9      	SBIC 0x19,1
+0001d9 c00a      	RJMP _0x8E
+0001da 99ca      	SBIC 0x19,2
+0001db c008      	RJMP _0x8E
+0001dc 99cb      	SBIC 0x19,3
+0001dd c006      	RJMP _0x8E
+0001de 99cc      	SBIC 0x19,4
+0001df c004      	RJMP _0x8E
+0001e0 99cd      	SBIC 0x19,5
+0001e1 c002      	RJMP _0x8E
+0001e2 9bce      	SBIS 0x19,6
+0001e3 c001      	RJMP _0x8F
                  _0x8E:
-0001e3 c004      	RJMP _0x8D
+0001e4 c004      	RJMP _0x8D
                  _0x8F:
                  ; 0000 006E         {
-                 ; 0000 006F             PORTC.0=0;
-0001e4 98a8      	CBI  0x15,0
-                 ; 0000 0070             PORTC.1=1;
-0001e5 9aa9      	SBI  0x15,1
-                 ; 0000 0071             PORTC.2=1;
-0001e6 9aaa      	SBI  0x15,2
-                 ; 0000 0072             PORTC.3=0;
-0001e7 98ab      	CBI  0x15,3
+                 ; 0000 006F             PORTB.4=0;
+0001e5 98c4      	CBI  0x18,4
+                 ; 0000 0070             PORTB.5=1;
+0001e6 9ac5      	SBI  0x18,5
+                 ; 0000 0071             PORTB.6=1;
+0001e7 9ac6      	SBI  0x18,6
+                 ; 0000 0072             PORTB.7=0;
+0001e8 98c7      	CBI  0x18,7
                  ; 0000 0073         }
                  ; 0000 0074         if (PINA.0==0&&PINA.1==1&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // Left Station
                  _0x8D:
-0001e8 99c8      	SBIC 0x19,0
-0001e9 c00c      	RJMP _0x99
-0001ea 9bc9      	SBIS 0x19,1
-0001eb c00a      	RJMP _0x99
-0001ec 99ca      	SBIC 0x19,2
-0001ed c008      	RJMP _0x99
-0001ee 99cb      	SBIC 0x19,3
-0001ef c006      	RJMP _0x99
-0001f0 99cc      	SBIC 0x19,4
-0001f1 c004      	RJMP _0x99
-0001f2 99cd      	SBIC 0x19,5
-0001f3 c002      	RJMP _0x99
-0001f4 9bce      	SBIS 0x19,6
-0001f5 c001      	RJMP _0x9A
+0001e9 99c8      	SBIC 0x19,0
+0001ea c00c      	RJMP _0x99
+0001eb 9bc9      	SBIS 0x19,1
+0001ec c00a      	RJMP _0x99
+0001ed 99ca      	SBIC 0x19,2
+0001ee c008      	RJMP _0x99
+0001ef 99cb      	SBIC 0x19,3
+0001f0 c006      	RJMP _0x99
+0001f1 99cc      	SBIC 0x19,4
+0001f2 c004      	RJMP _0x99
+0001f3 99cd      	SBIC 0x19,5
+0001f4 c002      	RJMP _0x99
+0001f5 9bce      	SBIS 0x19,6
+0001f6 c001      	RJMP _0x9A
                  _0x99:
-0001f6 c001      	RJMP _0x98
+0001f7 c001      	RJMP _0x98
                  _0x9A:
                  ; 0000 0075         {
-                 ; 0000 0076             PORTC.0=0;
-0001f7 d04f      	RCALL SUBOPT_0x1
-                 ; 0000 0077             PORTC.1=0;
-                 ; 0000 0078             PORTC.2=1;
-                 ; 0000 0079             PORTC.3=0;
+                 ; 0000 0076             PORTB.4=0;
+0001f8 d04f      	RCALL SUBOPT_0x1
+                 ; 0000 0077             PORTB.5=0;
+                 ; 0000 0078             PORTB.6=1;
+                 ; 0000 0079             PORTB.7=0;
                  ; 0000 007A         }
                  ; 0000 007B         if (PINA.0==0&&PINA.1==0&&PINA.2==1&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // Left Station
                  _0x98:
-0001f8 99c8      	SBIC 0x19,0
-0001f9 c00c      	RJMP _0xA4
-0001fa 99c9      	SBIC 0x19,1
-0001fb c00a      	RJMP _0xA4
-0001fc 9bca      	SBIS 0x19,2
-0001fd c008      	RJMP _0xA4
-0001fe 99cb      	SBIC 0x19,3
-0001ff c006      	RJMP _0xA4
-000200 99cc      	SBIC 0x19,4
-000201 c004      	RJMP _0xA4
-000202 99cd      	SBIC 0x19,5
-000203 c002      	RJMP _0xA4
-000204 9bce      	SBIS 0x19,6
-000205 c001      	RJMP _0xA5
+0001f9 99c8      	SBIC 0x19,0
+0001fa c00c      	RJMP _0xA4
+0001fb 99c9      	SBIC 0x19,1
+0001fc c00a      	RJMP _0xA4
+0001fd 9bca      	SBIS 0x19,2
+0001fe c008      	RJMP _0xA4
+0001ff 99cb      	SBIC 0x19,3
+000200 c006      	RJMP _0xA4
+000201 99cc      	SBIC 0x19,4
+000202 c004      	RJMP _0xA4
+000203 99cd      	SBIC 0x19,5
+000204 c002      	RJMP _0xA4
+000205 9bce      	SBIS 0x19,6
+000206 c001      	RJMP _0xA5
                  _0xA4:
-000206 c001      	RJMP _0xA3
+000207 c001      	RJMP _0xA3
                  _0xA5:
                  ; 0000 007C         {
-                 ; 0000 007D             PORTC.0=0;
-000207 d03f      	RCALL SUBOPT_0x1
-                 ; 0000 007E             PORTC.1=0;
-                 ; 0000 007F             PORTC.2=1;
-                 ; 0000 0080             PORTC.3=0;
+                 ; 0000 007D             PORTB.4=0;
+000208 d03f      	RCALL SUBOPT_0x1
+                 ; 0000 007E             PORTB.5=0;
+                 ; 0000 007F             PORTB.6=1;
+                 ; 0000 0080             PORTB.7=0;
                  ; 0000 0081         }
                  ; 0000 0082         if (PINA.0==1&&PINA.1==0&&PINA.2==1&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // Left Station
                  _0xA3:
-000208 9bc8      	SBIS 0x19,0
-000209 c00c      	RJMP _0xAF
-00020a 99c9      	SBIC 0x19,1
-00020b c00a      	RJMP _0xAF
-00020c 9bca      	SBIS 0x19,2
-00020d c008      	RJMP _0xAF
-00020e 99cb      	SBIC 0x19,3
-00020f c006      	RJMP _0xAF
-000210 99cc      	SBIC 0x19,4
-000211 c004      	RJMP _0xAF
-000212 99cd      	SBIC 0x19,5
-000213 c002      	RJMP _0xAF
-000214 9bce      	SBIS 0x19,6
-000215 c001      	RJMP _0xB0
+000209 9bc8      	SBIS 0x19,0
+00020a c00c      	RJMP _0xAF
+00020b 99c9      	SBIC 0x19,1
+00020c c00a      	RJMP _0xAF
+00020d 9bca      	SBIS 0x19,2
+00020e c008      	RJMP _0xAF
+00020f 99cb      	SBIC 0x19,3
+000210 c006      	RJMP _0xAF
+000211 99cc      	SBIC 0x19,4
+000212 c004      	RJMP _0xAF
+000213 99cd      	SBIC 0x19,5
+000214 c002      	RJMP _0xAF
+000215 9bce      	SBIS 0x19,6
+000216 c001      	RJMP _0xB0
                  _0xAF:
-000216 c001      	RJMP _0xAE
+000217 c001      	RJMP _0xAE
                  _0xB0:
                  ; 0000 0083         {
-                 ; 0000 0084             PORTC.0=0;
-000217 d02f      	RCALL SUBOPT_0x1
-                 ; 0000 0085             PORTC.1=0;
-                 ; 0000 0086             PORTC.2=1;
-                 ; 0000 0087             PORTC.3=0;
+                 ; 0000 0084             PORTB.4=0;
+000218 d02f      	RCALL SUBOPT_0x1
+                 ; 0000 0085             PORTB.5=0;
+                 ; 0000 0086             PORTB.6=1;
+                 ; 0000 0087             PORTB.7=0;
                  ; 0000 0088         }
                  ; 0000 0089         if (PINA.0==1&&PINA.1==1&&PINA.2==0&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // Left Station
                  _0xAE:
-000218 9bc8      	SBIS 0x19,0
-000219 c00c      	RJMP _0xBA
-00021a 9bc9      	SBIS 0x19,1
-00021b c00a      	RJMP _0xBA
-00021c 99ca      	SBIC 0x19,2
-00021d c008      	RJMP _0xBA
-00021e 99cb      	SBIC 0x19,3
-00021f c006      	RJMP _0xBA
-000220 99cc      	SBIC 0x19,4
-000221 c004      	RJMP _0xBA
-000222 99cd      	SBIC 0x19,5
-000223 c002      	RJMP _0xBA
-000224 9bce      	SBIS 0x19,6
-000225 c001      	RJMP _0xBB
+000219 9bc8      	SBIS 0x19,0
+00021a c00c      	RJMP _0xBA
+00021b 9bc9      	SBIS 0x19,1
+00021c c00a      	RJMP _0xBA
+00021d 99ca      	SBIC 0x19,2
+00021e c008      	RJMP _0xBA
+00021f 99cb      	SBIC 0x19,3
+000220 c006      	RJMP _0xBA
+000221 99cc      	SBIC 0x19,4
+000222 c004      	RJMP _0xBA
+000223 99cd      	SBIC 0x19,5
+000224 c002      	RJMP _0xBA
+000225 9bce      	SBIS 0x19,6
+000226 c001      	RJMP _0xBB
                  _0xBA:
-000226 c001      	RJMP _0xB9
+000227 c001      	RJMP _0xB9
                  _0xBB:
                  ; 0000 008A         {
-                 ; 0000 008B             PORTC.0=0;
-000227 d01f      	RCALL SUBOPT_0x1
-                 ; 0000 008C             PORTC.1=0;
-                 ; 0000 008D             PORTC.2=1;
-                 ; 0000 008E             PORTC.3=0;
+                 ; 0000 008B             PORTB.4=0;
+000228 d01f      	RCALL SUBOPT_0x1
+                 ; 0000 008C             PORTB.5=0;
+                 ; 0000 008D             PORTB.6=1;
+                 ; 0000 008E             PORTB.7=0;
                  ; 0000 008F         }
                  ; 0000 0090         if (PINA.0==0&&PINA.1==1&&PINA.2==1&&PINA.3==0&&PINA.4==0&&PINA.5==0&&PINA.6==0) // Left Station
                  _0xB9:
-000228 99c8      	SBIC 0x19,0
-000229 c00c      	RJMP _0xC5
-00022a 9bc9      	SBIS 0x19,1
-00022b c00a      	RJMP _0xC5
-00022c 9bca      	SBIS 0x19,2
-00022d c008      	RJMP _0xC5
-00022e 99cb      	SBIC 0x19,3
-00022f c006      	RJMP _0xC5
-000230 99cc      	SBIC 0x19,4
-000231 c004      	RJMP _0xC5
-000232 99cd      	SBIC 0x19,5
-000233 c002      	RJMP _0xC5
-000234 9bce      	SBIS 0x19,6
-000235 c001      	RJMP _0xC6
+000229 99c8      	SBIC 0x19,0
+00022a c00c      	RJMP _0xC5
+00022b 9bc9      	SBIS 0x19,1
+00022c c00a      	RJMP _0xC5
+00022d 9bca      	SBIS 0x19,2
+00022e c008      	RJMP _0xC5
+00022f 99cb      	SBIC 0x19,3
+000230 c006      	RJMP _0xC5
+000231 99cc      	SBIC 0x19,4
+000232 c004      	RJMP _0xC5
+000233 99cd      	SBIC 0x19,5
+000234 c002      	RJMP _0xC5
+000235 9bce      	SBIS 0x19,6
+000236 c001      	RJMP _0xC6
                  _0xC5:
-000236 c001      	RJMP _0xC4
+000237 c001      	RJMP _0xC4
                  _0xC6:
                  ; 0000 0091         {
-                 ; 0000 0092             PORTC.0=0;
-000237 d00f      	RCALL SUBOPT_0x1
-                 ; 0000 0093             PORTC.1=0;
-                 ; 0000 0094             PORTC.2=1;
-                 ; 0000 0095             PORTC.3=0;
+                 ; 0000 0092             PORTB.4=0;
+000238 d00f      	RCALL SUBOPT_0x1
+                 ; 0000 0093             PORTB.5=0;
+                 ; 0000 0094             PORTB.6=1;
+                 ; 0000 0095             PORTB.7=0;
                  ; 0000 0096         }
                  ; 0000 0097         if (PINB.0==1||PINB.1==1)
                  _0xC4:
-000238 99b0      	SBIC 0x16,0
-000239 c002      	RJMP _0xD0
-00023a 9bb1      	SBIS 0x16,1
-00023b c004      	RJMP _0xCF
+000239 99b0      	SBIC 0x16,0
+00023a c002      	RJMP _0xD0
+00023b 9bb1      	SBIS 0x16,1
+00023c c004      	RJMP _0xCF
                  _0xD0:
                  ; 0000 0098         {
-                 ; 0000 0099             PORTC.0=0;
-00023c 98a8      	CBI  0x15,0
-                 ; 0000 009A             PORTC.1=0;
-00023d 98a9      	CBI  0x15,1
-                 ; 0000 009B             PORTC.2=0;
-00023e 98aa      	CBI  0x15,2
-                 ; 0000 009C             PORTC.3=0;
-00023f 98ab      	CBI  0x15,3
+                 ; 0000 0099             PORTB.4=0;
+00023d 98c4      	CBI  0x18,4
+                 ; 0000 009A             PORTB.5=0;
+00023e 98c5      	CBI  0x18,5
+                 ; 0000 009B             PORTB.6=0;
+00023f 98c6      	CBI  0x18,6
+                 ; 0000 009C             PORTB.7=0;
+000240 98c7      	CBI  0x18,7
                  ; 0000 009D         }
                  ; 0000 009E     }
                  _0xCF:
-000240 ce10      	RJMP _0x3
+000241 ce10      	RJMP _0x3
                  ; 0000 009F }
                  _0xDA:
-000241 cfff      	RJMP _0xDA
+000242 cfff      	RJMP _0xDA
                  ; .FEND
                  
                  	.CSEG
                  ;OPTIMIZER ADDED SUBROUTINE, CALLED 6 TIMES, CODE SIZE REDUCTION:7 WORDS
                  SUBOPT_0x0:
-000242 9aa8      	SBI  0x15,0
-000243 98a9      	CBI  0x15,1
-000244 98aa      	CBI  0x15,2
-000245 98ab      	CBI  0x15,3
-000246 9508      	RET
+000243 9ac4      	SBI  0x18,4
+000244 98c5      	CBI  0x18,5
+000245 98c6      	CBI  0x18,6
+000246 98c7      	CBI  0x18,7
+000247 9508      	RET
                  
                  ;OPTIMIZER ADDED SUBROUTINE, CALLED 6 TIMES, CODE SIZE REDUCTION:7 WORDS
                  SUBOPT_0x1:
-000247 98a8      	CBI  0x15,0
-000248 98a9      	CBI  0x15,1
-000249 9aaa      	SBI  0x15,2
-00024a 98ab      	CBI  0x15,3
-00024b 9508      	RET
+000248 98c4      	CBI  0x18,4
+000249 98c5      	CBI  0x18,5
+00024a 9ac6      	SBI  0x18,6
+00024b 98c7      	CBI  0x18,7
+00024c 9508      	RET
                  
                  
                  	.CSEG
@@ -1958,7 +1959,7 @@ ATmega16A register use summary:
 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 r5 :   0 r6 :   0 r7 :   0 
 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 r13:   0 r14:   0 r15:   0 
 r16:   0 r17:   0 r18:   0 r19:   0 r20:   0 r21:   0 r22:   0 r23:   0 
-r24:   4 r25:   1 r26:   2 r27:   1 r28:   1 r29:   1 r30:  22 r31:   2 
+r24:   4 r25:   1 r26:   2 r27:   1 r28:   1 r29:   1 r30:  23 r31:   2 
 x  :   2 y  :   0 z  :   0 
 Registers used: 9 out of 35 (25.7%)
 
@@ -1973,7 +1974,7 @@ cbi   :  16 cbr   :   0 clc   :   0 clh   :   0 cli   :   1 cln   :   0
 clr   :   2 cls   :   0 clt   :   0 clv   :   0 clz   :   0 com   :   0 
 cp    :   0 cpc   :   0 cpi   :   0 cpse  :   0 dec   :   1 des   :   0 
 eor   :   0 fmul  :   0 fmuls :   0 fmulsu:   0 icall :   0 ijmp  :   0 
-in    :   0 inc   :   0 jmp   :  22 ld    :   0 ldd   :   0 ldi   :  15 
+in    :   0 inc   :   0 jmp   :  22 ld    :   0 ldd   :   0 ldi   :  16 
 lds   :   0 lpm   :   0 lsl   :   0 lsr   :   0 mov   :   0 movw  :   0 
 mul   :   0 muls  :   0 mulsu :   0 neg   :   0 nop   :   0 or    :   0 
 ori   :   0 out   :  13 pop   :   0 push  :   0 rcall :  12 ret   :   2 
@@ -1988,7 +1989,7 @@ Instructions used: 16 out of 116 (13.8%)
 ATmega16A memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x000498   1176      0   1176   16384   7.2%
+[.cseg] 0x000000 0x00049a   1178      0   1178   16384   7.2%
 [.dseg] 0x000060 0x000160      0      0      0    1024   0.0%
 [.eseg] 0x000000 0x000000      0      0      0     512   0.0%
 
